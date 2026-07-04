@@ -66,6 +66,15 @@ const quarkusClient = {
     const response = await client.post('/users/reset-password', { token, newPassword });
     return response.data;
   },
+
+  /**
+   * Google Auth Login
+   * @param {string} token
+   */
+  async googleLogin(token) {
+    const response = await client.post('/users/google', { token });
+    return response.data;
+  },
 };
 
 module.exports = quarkusClient;

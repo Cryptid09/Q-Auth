@@ -52,4 +52,14 @@ public class UserRepository implements PanacheRepositoryBase<User, UUID> {
     public Optional<User> findByResetToken(String token) {
         return find("resetToken", token).firstResultOptional();
     }
+
+    /**
+     * Finds a user by their Google ID.
+     *
+     * @param googleId the Google ID
+     * @return an Optional containing the user if found
+     */
+    public Optional<User> findByGoogleId(String googleId) {
+        return find("googleId", googleId).firstResultOptional();
+    }
 }

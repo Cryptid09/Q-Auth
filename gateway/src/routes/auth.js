@@ -63,6 +63,28 @@ router.post('/reset-password', async (req, res) => {
 });
 
 /**
+ * POST /google — Authenticate a user with Google and create a session.
+ */
+router.post('/google', async (req, res) => {
+  try {
+    const user = await quarkusClient.googleLogin(req.body.token);
+    
+    // Store user info in session
+    req.session.user = {
+      id: user.id,
+      email: user.email,
+      verified: user.verified,
+    };
+
+    res.status(200).json({ message: 'Google login successful', user });
+  } catch (error) {
+    const status = error.response?.status || 500;
+    const data = error.response?.data || { error: 'Google login failed' };
+    res.status(status).json(data);
+  }
+});
+
+/**
  * POST /login — Authenticate a user and create a session.
  * Proxies to Quarkus POST /users/login, then stores user in session.
  */

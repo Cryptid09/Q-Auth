@@ -28,7 +28,7 @@ public class User extends PanacheEntityBase {
     @Column(name = "email", unique = true, nullable = false, length = 255)
     public String email;
 
-    @Column(name = "password_hash", nullable = false, length = 255)
+    @Column(name = "password_hash", length = 255)
     public String passwordHash;
 
     @Column(name = "verified", nullable = false)
@@ -42,6 +42,12 @@ public class User extends PanacheEntityBase {
 
     @Column(name = "reset_token_expiry")
     public Instant resetTokenExpiry;
+
+    @Column(name = "auth_provider", nullable = false, columnDefinition = "varchar(255) default 'LOCAL'")
+    public String authProvider = "LOCAL";
+
+    @Column(name = "google_id", unique = true)
+    public String googleId;
 
     @Column(name = "created_at", nullable = false, updatable = false)
     public Instant createdAt;

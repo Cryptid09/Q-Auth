@@ -3,6 +3,7 @@ package com.example.users.resource;
 import com.example.users.dto.ForgotPasswordRequest;
 import com.example.users.dto.ResetPasswordRequest;
 import com.example.users.dto.LoginRequest;
+import com.example.users.dto.GoogleAuthRequest;
 import com.example.users.dto.MessageResponse;
 import com.example.users.dto.SignupRequest;
 import com.example.users.dto.UserResponse;
@@ -62,6 +63,19 @@ public class UserResource {
     @Path("/login")
     public RestResponse<UserResponse> login(@Valid LoginRequest request) {
         UserResponse response = userService.login(request);
+        return RestResponse.ok(response);
+    }
+
+    /**
+     * POST /users/google — Login or Register with Google.
+     *
+     * @param request the google auth request
+     * @return 200 OK with the user response
+     */
+    @POST
+    @Path("/google")
+    public RestResponse<UserResponse> googleLogin(@Valid GoogleAuthRequest request) {
+        UserResponse response = userService.loginWithGoogle(request.token());
         return RestResponse.ok(response);
     }
 

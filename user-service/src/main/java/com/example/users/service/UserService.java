@@ -17,6 +17,9 @@ import org.jboss.logging.Logger;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.UUID;
+import java.util.Base64;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.JsonNode;
 
 /**
  * Core business logic service for user operations.
@@ -99,6 +102,60 @@ public class UserService {
 
         LOG.infof("Login successful for user: %s", user.id);
         return UserMapper.toResponse(user);
+    }
+
+    /**
+     * Validates a Google JWT and logs in or creates the user.
+     * Note: This uses basic Base64 decoding for demonstration. 
+     * In production with a real Client ID, use GoogleIdTokenVerifier to verify the cryptographic signature.
+     *
+     * @param token the Google JWT credential
+     * @return the user response
+     */
+    @Transactional
+    public UserResponse loginWithGoogle(String token) {
+        LOG.infof("Google login attempt");
+        try {
+            // Decode the JWT payload (the second part of the token)
+            String[] parts = token.split("\\.");
+            if (parts.length != 3) {
+                throw new InvalidCredentialsException();
+            }
+            
+            String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]));
+            ObjectMapper mapper = new ObjectMapper();
+            JsonNode payload = mapper.readTree(payloadJson);
+            
+            String email = payload.get("email").asText();
+            String googleId = payload.get("sub").asText();
+            
+            User user = userRepository.findByGoogleId(googleId).orElseGet(() -> {
+                return userRepository.findByEmail(email).orElseGet(() -> {
+                    User newUser = new User();
+                    newUser.email = email;
+                    newUser.passwordHash = "GOOGLE_AUTH_" + UUID.randomUUID().toString(); // Satisfy DB NOT NULL constraint
+                    newUser.authProvider = "GOOGLE";
+                    newUser.googleId = googleId;
+                    newUser.verified = true;
+                    userRepository.persist(newUser);
+                    return newUser;
+                });
+            });
+            
+            // Link account if they previously signed up with email/password
+            if (user.googleId == null) {
+                user.googleId = googleId;
+                user.verified = true;
+                userRepository.persist(user);
+            }
+            
+            LOG.infof("Google login successful for user: %s", user.id);
+            return UserMapper.toResponse(user);
+            
+        } catch (Exception e) {
+            LOG.error("Google login failed", e);
+            throw new InvalidCredentialsException();
+        }
     }
 
     /**
