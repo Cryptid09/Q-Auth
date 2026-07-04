@@ -7,6 +7,7 @@ export default function ResetPassword() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [localError, setLocalError] = useState('');
   const [submitting, setSubmitting] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   
   const { resetPassword } = useAuth();
   const navigate = useNavigate();
@@ -68,30 +69,44 @@ export default function ResetPassword() {
           <form className="space-y-8" onSubmit={handleSubmit}>
             <div className="space-y-2">
               <label className="font-label text-xs font-bold text-on-surface uppercase tracking-widest block" htmlFor="password">New Password</label>
-              <input 
-                className="w-full bauhaus-input px-4 py-3 text-on-surface placeholder-outline-variant focus:outline-none" 
-                id="password" 
-                placeholder="••••••••" 
-                required 
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                minLength={8}
-              />
+              <div className="relative">
+                <input 
+                  className="w-full bauhaus-input px-4 py-3 pr-12 text-on-surface placeholder-outline-variant focus:outline-none" 
+                  id="password" 
+                  placeholder="••••••••" 
+                  required 
+                  type={showPassword ? "text" : "password"}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  minLength={8}
+                />
+                <button
+                  type="button"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary transition-colors"
+                  onClick={() => setShowPassword(!showPassword)}
+                  tabIndex="-1"
+                >
+                  <span className="material-symbols-outlined text-[20px]">
+                    {showPassword ? 'visibility_off' : 'visibility'}
+                  </span>
+                </button>
+              </div>
             </div>
 
             <div className="space-y-2">
               <label className="font-label text-xs font-bold text-on-surface uppercase tracking-widest block" htmlFor="confirmPassword">Confirm Password</label>
-              <input 
-                className="w-full bauhaus-input px-4 py-3 text-on-surface placeholder-outline-variant focus:outline-none" 
-                id="confirmPassword" 
-                placeholder="••••••••" 
-                required 
-                type="password"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                minLength={8}
-              />
+              <div className="relative">
+                <input 
+                  className="w-full bauhaus-input px-4 py-3 pr-12 text-on-surface placeholder-outline-variant focus:outline-none" 
+                  id="confirmPassword" 
+                  placeholder="••••••••" 
+                  required 
+                  type={showPassword ? "text" : "password"}
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  minLength={8}
+                />
+              </div>
             </div>
             
             <button 

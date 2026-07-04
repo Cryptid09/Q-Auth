@@ -10,6 +10,7 @@ export default function Signup() {
   const [password, setPassword] = useState('');
   const [localError, setLocalError] = useState('');
   const [submitting, setSubmitting] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const { signup } = useAuth();
   const navigate = useNavigate();
 
@@ -76,17 +77,29 @@ export default function Signup() {
             
             <div className="space-y-2">
               <label className="font-label text-xs font-bold text-on-surface uppercase tracking-widest block" htmlFor="password">Password</label>
-              <input 
-                className="w-full bauhaus-input px-4 py-3 text-on-surface placeholder-outline-variant focus:outline-none" 
-                id="signup-password" 
-                placeholder="AT LEAST 8 CHARACTERS" 
-                required 
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                minLength={8}
-                autoComplete="new-password"
-              />
+              <div className="relative">
+                <input 
+                  className="w-full bauhaus-input px-4 py-3 pr-12 text-on-surface placeholder-outline-variant focus:outline-none" 
+                  id="signup-password" 
+                  placeholder="AT LEAST 8 CHARACTERS" 
+                  required 
+                  type={showPassword ? "text" : "password"}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  minLength={8}
+                  autoComplete="new-password"
+                />
+                <button
+                  type="button"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary transition-colors"
+                  onClick={() => setShowPassword(!showPassword)}
+                  tabIndex="-1"
+                >
+                  <span className="material-symbols-outlined text-[20px]">
+                    {showPassword ? 'visibility_off' : 'visibility'}
+                  </span>
+                </button>
+              </div>
             </div>
             
             <button 

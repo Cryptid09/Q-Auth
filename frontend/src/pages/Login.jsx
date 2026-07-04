@@ -10,6 +10,7 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const [localError, setLocalError] = useState('');
   const [submitting, setSubmitting] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const { login } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
@@ -106,22 +107,27 @@ export default function Login() {
                 <label className="font-label text-xs font-bold text-on-surface uppercase tracking-widest block" htmlFor="password">Password</label>
                 <Link className="text-secondary text-xs font-bold uppercase hover:underline" to="/forgot-password">Reset</Link>
               </div>
-              <input 
-                className="w-full bauhaus-input px-4 py-3 text-on-surface placeholder-outline-variant focus:outline-none" 
-                id="password" 
-                placeholder="••••••••" 
-                required 
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </div>
-            
-            <div className="flex items-center gap-3">
-              <div className="relative flex items-center">
-                <input className="w-6 h-6 border-2 border-primary rounded-none text-primary focus:ring-0 cursor-pointer" id="remember" type="checkbox"/>
+              <div className="relative">
+                <input 
+                  className="w-full bauhaus-input px-4 py-3 pr-12 text-on-surface placeholder-outline-variant focus:outline-none" 
+                  id="password" 
+                  placeholder="••••••••" 
+                  required 
+                  type={showPassword ? "text" : "password"}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <button
+                  type="button"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary transition-colors"
+                  onClick={() => setShowPassword(!showPassword)}
+                  tabIndex="-1"
+                >
+                  <span className="material-symbols-outlined text-[20px]">
+                    {showPassword ? 'visibility_off' : 'visibility'}
+                  </span>
+                </button>
               </div>
-              <label className="font-label text-xs font-bold uppercase tracking-tighter cursor-pointer" htmlFor="remember">Persist Session</label>
             </div>
             
             <button 

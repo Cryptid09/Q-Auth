@@ -1,29 +1,29 @@
 package com.example.users.service;
 
 import io.quarkus.mailer.Mail;
-import io.quarkus.mailer.Mailer;
+import io.quarkus.mailer.reactive.ReactiveMailer;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import org.jboss.logging.Logger;
 
 /**
  * Service responsible for sending emails.
- * Uses the Quarkus Mailer which sends via SMTP (Mailpit in development).
+ * Uses the Quarkus ReactiveMailer to send emails asynchronously.
  */
 @ApplicationScoped
 public class EmailService {
 
     private static final Logger LOG = Logger.getLogger(EmailService.class);
 
-    private final Mailer mailer;
+    private final ReactiveMailer reactiveMailer;
 
     @Inject
-    public EmailService(Mailer mailer) {
-        this.mailer = mailer;
+    public EmailService(ReactiveMailer reactiveMailer) {
+        this.reactiveMailer = reactiveMailer;
     }
 
     /**
-     * Sends a verification email to the newly registered user.
+     * Sends a verification email to the newly registered user asynchronously.
      *
      * @param toEmail the recipient email address
      * @param verificationUrl the full verification URL with token
@@ -34,16 +34,17 @@ public class EmailService {
         String subject = "Verify your email — Oppex Portal";
         String htmlBody = buildVerificationHtml(verificationUrl);
 
-        mailer.send(
+        reactiveMailer.send(
                 Mail.withHtml(toEmail, subject, htmlBody)
                     .setTo(java.util.List.of(toEmail))
+        ).subscribe().with(
+                success -> LOG.infof("Verification email sent to %s", toEmail),
+                failure -> LOG.errorf(failure, "Failed to send verification email to %s", toEmail)
         );
-
-        LOG.infof("Verification email sent to %s", toEmail);
     }
 
     /**
-     * Sends a password reset email to the user.
+     * Sends a password reset email to the user asynchronously.
      *
      * @param toEmail the recipient email address
      * @param resetUrl the full reset URL with token
@@ -54,12 +55,13 @@ public class EmailService {
         String subject = "Reset your password — Oppex Portal";
         String htmlBody = buildPasswordResetHtml(resetUrl);
 
-        mailer.send(
+        reactiveMailer.send(
                 Mail.withHtml(toEmail, subject, htmlBody)
                     .setTo(java.util.List.of(toEmail))
+        ).subscribe().with(
+                success -> LOG.infof("Password reset email sent to %s", toEmail),
+                failure -> LOG.errorf(failure, "Failed to send password reset email to %s", toEmail)
         );
-
-        LOG.infof("Password reset email sent to %s", toEmail);
     }
 
     private String buildVerificationHtml(String verificationUrl) {
