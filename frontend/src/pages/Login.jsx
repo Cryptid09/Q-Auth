@@ -175,7 +175,7 @@ export default function Login() {
       
       <footer className="z-20 flex flex-col md:flex-row justify-between items-center gap-6 px-10 py-10 w-full bg-primary text-on-primary">
         <div className="font-label text-xs font-bold uppercase tracking-widest">
-            © 2024 Oppex Security Systems / Form Follows Function
+            
         </div>
         <div className="flex gap-8">
           <a className="font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors" href="#">Privacy</a>
