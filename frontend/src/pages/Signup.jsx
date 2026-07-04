@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { GoogleLogin } from '@react-oauth/google';
 import { useAuth } from '../context/AuthContext';
 
 /**
@@ -11,7 +12,7 @@ export default function Signup() {
   const [localError, setLocalError] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-  const { signup } = useAuth();
+  const { signup, loginWithGoogle } = useAuth();
   const navigate = useNavigate();
 
   async function handleSubmit(e) {
@@ -26,6 +27,16 @@ export default function Signup() {
       setLocalError(err.message);
     } finally {
       setSubmitting(false);
+    }
+  }
+
+  async function handleGoogleSuccess(credentialResponse) {
+    setLocalError('');
+    try {
+      await loginWithGoogle(credentialResponse.credential);
+      navigate('/dashboard', { replace: true });
+    } catch (err) {
+      setLocalError(err.message);
     }
   }
 
@@ -59,6 +70,17 @@ export default function Signup() {
               <span>{localError}</span>
             </div>
           )}
+
+          <div className="mb-6 flex justify-center">
+            <GoogleLogin
+              onSuccess={handleGoogleSuccess}
+              onError={() => setLocalError('Google Sign-In failed')}
+            />
+          </div>
+          
+          <div className="flex items-center mb-6 before:flex-1 before:border-t-2 before:border-primary/10 after:flex-1 after:border-t-2 after:border-primary/10">
+             <p className="text-center font-label text-xs uppercase tracking-widest text-on-surface-variant mx-4">Or Signup With Email</p>
+          </div>
 
           <form className="space-y-8" id="signup-form" onSubmit={handleSubmit}>
             <div className="space-y-2">

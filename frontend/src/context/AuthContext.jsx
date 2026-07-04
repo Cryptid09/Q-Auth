@@ -61,6 +61,19 @@ export function AuthProvider({ children }) {
     }
   }, []);
 
+  async function loginWithGoogle(token) {
+    setError(null);
+    try {
+      const { data } = await client.post('/google', { token });
+      setUser(data.user);
+      return data;
+    } catch (err) {
+      const message = err.response?.data?.error || 'Google login failed';
+      setError(message);
+      throw new Error(message);
+    }
+  }
+
   async function requestPasswordReset(email) {
     setError(null);
     try {
@@ -96,6 +109,7 @@ export function AuthProvider({ children }) {
     signup,
     login,
     logout,
+    loginWithGoogle,
     requestPasswordReset,
     resetPassword,
     clearError,

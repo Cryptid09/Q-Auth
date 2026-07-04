@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, Link, useLocation, useSearchParams } from 'react-router-dom';
+import { GoogleLogin } from '@react-oauth/google';
 import { useAuth } from '../context/AuthContext';
 
 /**
@@ -11,7 +12,7 @@ export default function Login() {
   const [localError, setLocalError] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-  const { login } = useAuth();
+  const { login, loginWithGoogle } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
   const [searchParams] = useSearchParams();
@@ -45,6 +46,16 @@ export default function Login() {
       setLocalError(err.message);
     } finally {
       setSubmitting(false);
+    }
+  }
+
+  async function handleGoogleSuccess(credentialResponse) {
+    setLocalError('');
+    try {
+      await loginWithGoogle(credentialResponse.credential);
+      navigate('/dashboard', { replace: true });
+    } catch (err) {
+      setLocalError(err.message);
     }
   }
 
@@ -87,6 +98,18 @@ export default function Login() {
               <span>{finalError}</span>
             </div>
           )}
+
+          <div className="mb-6 flex justify-center">
+            <GoogleLogin
+              onSuccess={handleGoogleSuccess}
+              onError={() => setLocalError('Google Sign-In failed')}
+              useOneTap
+            />
+          </div>
+          
+          <div className="flex items-center mb-6 before:flex-1 before:border-t-2 before:border-primary/10 after:flex-1 after:border-t-2 after:border-primary/10">
+             <p className="text-center font-label text-xs uppercase tracking-widest text-on-surface-variant mx-4">Or Login With Email</p>
+          </div>
 
           <form className="space-y-8" id="login-form" onSubmit={handleSubmit}>
             <div className="space-y-2">
