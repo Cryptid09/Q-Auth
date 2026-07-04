@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link, useLocation, useSearchParams } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
 /**
@@ -12,6 +12,13 @@ export default function Login() {
   const [submitting, setSubmitting] = useState(false);
   const { login } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+  const [searchParams] = useSearchParams();
+  
+  const isVerified = searchParams.get('verified') === 'true';
+  const verificationError = searchParams.get('error');
+  
+  const successMessage = isVerified ? 'Email successfully verified! You can now log in.' : location.state?.message;
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -36,9 +43,15 @@ export default function Login() {
           <p>Sign in to access your portal</p>
         </div>
 
-        {localError && (
+        {(localError || verificationError) && (
           <div className="alert alert-error" role="alert" id="login-error">
-            {localError}
+            {localError || (verificationError === 'missing_token' ? 'Invalid verification link.' : 'Email verification failed.')}
+          </div>
+        )}
+
+        {successMessage && !localError && !verificationError && (
+          <div className="alert alert-success" role="alert" id="login-success">
+            {successMessage}
           </div>
         )}
 

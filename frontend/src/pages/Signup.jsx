@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
 /**
@@ -9,9 +9,9 @@ export default function Signup() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [localError, setLocalError] = useState('');
-  const [success, setSuccess] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const { signup } = useAuth();
+  const navigate = useNavigate();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -20,34 +20,12 @@ export default function Signup() {
 
     try {
       await signup(email, password);
-      setSuccess(true);
+      navigate('/login', { state: { message: 'Registration successful! Please check your email to verify.' } });
     } catch (err) {
       setLocalError(err.message);
     } finally {
       setSubmitting(false);
     }
-  }
-
-  if (success) {
-    return (
-      <div className="page-container">
-        <div className="card">
-          <div className="card-header">
-            <h1>Check Your Email</h1>
-            <p>We've sent a verification link to <strong>{email}</strong></p>
-          </div>
-
-          <div className="alert alert-success" id="signup-success">
-            Registration successful! Please verify your email before logging in.
-          </div>
-
-          <div className="card-footer">
-            <span>Already verified?</span>
-            <Link to="/login">Sign in</Link>
-          </div>
-        </div>
-      </div>
-    );
   }
 
   return (

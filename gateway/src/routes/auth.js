@@ -89,17 +89,16 @@ router.get('/profile', requireAuth, async (req, res) => {
  * GET /verify — Verify email with token (proxies to Quarkus).
  */
 router.get('/verify', async (req, res) => {
+  const frontendUrl = process.env.CORS_ORIGIN || 'http://localhost:5173';
   try {
     const { token } = req.query;
     if (!token) {
-      return res.status(400).json({ error: 'Token is required' });
+      return res.redirect(`${frontendUrl}/login?error=missing_token`);
     }
-    const result = await quarkusClient.verifyEmail(token);
-    res.status(200).json(result);
+    await quarkusClient.verifyEmail(token);
+    res.redirect(`${frontendUrl}/login?verified=true`);
   } catch (error) {
-    const status = error.response?.status || 500;
-    const data = error.response?.data || { error: 'Verification failed' };
-    res.status(status).json(data);
+    res.redirect(`${frontendUrl}/login?error=verification_failed`);
   }
 });
 
