@@ -1,0 +1,45 @@
+# Oppex Auth — Git Ignore
+docs/
+# --- Java / Maven ---
+user-service/target/
+*.class
+*.jar
+*.war
+*.ear
+
+# --- Node.js ---
+node_modules/
+*.tgz
+.npm
+.pnp.*
+
+# --- Frontend Build ---
+frontend/dist/
+
+# --- Environment ---
+.env
+.env.local
+.env.*.local
+
+# --- IDE ---
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+
+# --- Docker ---
+*.log
+
+# --- Certificates ---
+certs/
+
+# --- Temp ---
+frontend/install.sh

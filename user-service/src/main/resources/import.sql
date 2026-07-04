@@ -1,0 +1,2 @@
+-- Oppex-a Auth: No seed data needed for production
+-- This file is used by Hibernate for initial data loading
