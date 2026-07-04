@@ -42,6 +42,26 @@ public class EmailService {
         LOG.infof("Verification email sent to %s", toEmail);
     }
 
+    /**
+     * Sends a password reset email to the user.
+     *
+     * @param toEmail the recipient email address
+     * @param resetUrl the full reset URL with token
+     */
+    public void sendPasswordResetEmail(String toEmail, String resetUrl) {
+        LOG.infof("Sending password reset email to %s", toEmail);
+
+        String subject = "Reset your password — Oppex Portal";
+        String htmlBody = buildPasswordResetHtml(resetUrl);
+
+        mailer.send(
+                Mail.withHtml(toEmail, subject, htmlBody)
+                    .setTo(java.util.List.of(toEmail))
+        );
+
+        LOG.infof("Password reset email sent to %s", toEmail);
+    }
+
     private String buildVerificationHtml(String verificationUrl) {
         return """
                 <!DOCTYPE html>
@@ -71,5 +91,36 @@ public class EmailService {
                 </body>
                 </html>
                 """.formatted(verificationUrl, verificationUrl);
+    }
+
+    private String buildPasswordResetHtml(String resetUrl) {
+        return """
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <meta charset="UTF-8">
+                    <style>
+                        body { font-family: 'Segoe UI', Arial, sans-serif; background: #0f0f23; color: #e0e0e0; padding: 40px; }
+                        .container { max-width: 520px; margin: 0 auto; background: #1a1a3e; border-radius: 12px; padding: 40px; border: 1px solid #2a2a5a; }
+                        h1 { color: #7c83ff; font-size: 24px; margin-bottom: 16px; }
+                        p { line-height: 1.6; color: #b0b0d0; }
+                        .btn { display: inline-block; padding: 14px 32px; background: linear-gradient(135deg, #667eea, #764ba2); color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: 600; margin: 24px 0; }
+                        .footer { margin-top: 32px; font-size: 12px; color: #666690; }
+                    </style>
+                </head>
+                <body>
+                    <div class="container">
+                        <h1>Password Reset Request</h1>
+                        <p>We received a request to reset your password. Click the button below to choose a new one:</p>
+                        <a href="%s" class="btn">Reset Password</a>
+                        <p>If the button doesn't work, copy and paste this link into your browser:</p>
+                        <p style="word-break: break-all; color: #667eea;">%s</p>
+                        <div class="footer">
+                            <p>If you did not request a password reset, you can safely ignore this email.</p>
+                        </div>
+                    </div>
+                </body>
+                </html>
+                """.formatted(resetUrl, resetUrl);
     }
 }

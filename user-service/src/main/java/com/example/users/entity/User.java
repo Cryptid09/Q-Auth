@@ -37,6 +37,12 @@ public class User extends PanacheEntityBase {
     @Column(name = "verification_token", length = 255)
     public String verificationToken;
 
+    @Column(name = "reset_token", length = 255)
+    public String resetToken;
+
+    @Column(name = "reset_token_expiry")
+    public Instant resetTokenExpiry;
+
     @Column(name = "created_at", nullable = false, updatable = false)
     public Instant createdAt;
 

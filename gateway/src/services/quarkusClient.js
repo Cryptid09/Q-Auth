@@ -47,6 +47,25 @@ const quarkusClient = {
     const response = await client.get(`/users/${id}`);
     return response.data;
   },
+
+  /**
+   * Request a password reset.
+   * @param {string} email
+   */
+  async requestPasswordReset(email) {
+    const response = await client.post('/users/forgot-password', { email });
+    return response.data;
+  },
+
+  /**
+   * Reset password with token.
+   * @param {string} token
+   * @param {string} newPassword
+   */
+  async resetPassword(token, newPassword) {
+    const response = await client.post('/users/reset-password', { token, newPassword });
+    return response.data;
+  },
 };
 
 module.exports = quarkusClient;

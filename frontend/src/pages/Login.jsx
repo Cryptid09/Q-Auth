@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate, Link, useLocation, useSearchParams } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
 /**
- * Login page — email/password form with error handling.
+ * Login page — Bauhaus Edition.
  */
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -19,6 +19,18 @@ export default function Login() {
   const verificationError = searchParams.get('error');
   
   const successMessage = isVerified ? 'Email successfully verified! You can now log in.' : location.state?.message;
+  const [displaySuccess, setDisplaySuccess] = useState(successMessage);
+
+  useEffect(() => {
+    setDisplaySuccess(successMessage);
+    if (successMessage) {
+      const timer = setTimeout(() => {
+        setDisplaySuccess('');
+        navigate('/login', { replace: true, state: {} });
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [successMessage, navigate]);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -35,70 +47,113 @@ export default function Login() {
     }
   }
 
+  const finalError = localError || (verificationError ? (verificationError === 'missing_token' ? 'Invalid verification link.' : 'Email verification failed.') : '');
+
   return (
-    <div className="page-container">
-      <div className="card">
-        <div className="card-header">
-          <h1>Welcome Back</h1>
-          <p>Sign in to access your portal</p>
-        </div>
-
-        {(localError || verificationError) && (
-          <div className="alert alert-error" role="alert" id="login-error">
-            {localError || (verificationError === 'missing_token' ? 'Invalid verification link.' : 'Email verification failed.')}
-          </div>
-        )}
-
-        {successMessage && !localError && !verificationError && (
-          <div className="alert alert-success" role="alert" id="login-success">
-            {successMessage}
-          </div>
-        )}
-
-        <form onSubmit={handleSubmit} id="login-form">
-          <div className="form-group">
-            <label htmlFor="login-email" className="form-label">Email</label>
-            <input
-              id="login-email"
-              type="email"
-              className="form-input"
-              placeholder="you@example.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              autoComplete="email"
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="login-password" className="form-label">Password</label>
-            <input
-              id="login-password"
-              type="password"
-              className="form-input"
-              placeholder="••••••••"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              autoComplete="current-password"
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="btn btn-primary"
-            disabled={submitting}
-            id="login-submit"
-          >
-            {submitting ? <span className="spinner" /> : 'Sign In'}
+    <div className="flex flex-col min-h-screen relative overflow-x-hidden bg-background">
+      <div className="fixed inset-0 grid-pattern pointer-events-none"></div>
+      
+      <header className="z-20 flex justify-between items-center px-6 py-6 w-full bg-transparent">
+        <div className="font-display text-2xl font-bold uppercase tracking-tighter text-primary border-b-4 border-primary-fixed">Oppex Portal</div>
+        <div className="flex gap-4 items-center">
+          <button className="text-on-surface hover:text-secondary transition-colors">
+            <span className="material-symbols-outlined text-3xl">help_outline</span>
           </button>
-        </form>
-
-        <div className="card-footer">
-          <span>Don't have an account?</span>
-          <Link to="/signup">Sign up</Link>
         </div>
-      </div>
+      </header>
+      
+      <main className="flex-grow z-10 flex items-center justify-center px-6 py-12">
+        <div className={`bauhaus-card w-full max-w-[440px] p-8 md:p-10 relative ${finalError ? 'animate-shake' : ''}`}>
+          <div className="absolute -top-6 -right-6 w-12 h-12 bg-secondary border-4 border-primary"></div>
+          <div className="absolute -bottom-6 -left-6 w-12 h-12 bg-tertiary rounded-full border-4 border-primary"></div>
+          
+          <div className="mb-10">
+            <h1 className="font-display text-4xl font-bold uppercase tracking-tight text-on-surface mb-2">Login</h1>
+            <div className="h-1.5 w-16 bg-primary-fixed mb-4"></div>
+            <p className="font-body text-on-surface-variant">Access the secure environment.</p>
+          </div>
+
+          {displaySuccess && !finalError && (
+            <div className="mb-6 flex items-center gap-3 p-4 border-4 border-primary bg-green-50 text-green-800 font-bold" id="success-banner">
+              <span className="material-symbols-outlined">check_circle</span>
+              <span>{displaySuccess}</span>
+            </div>
+          )}
+
+          {finalError && (
+            <div className="mb-6 flex items-center gap-3 p-4 border-4 border-secondary bg-red-50 text-secondary font-bold" id="error-banner">
+              <span className="material-symbols-outlined">error</span>
+              <span>{finalError}</span>
+            </div>
+          )}
+
+          <form className="space-y-8" id="login-form" onSubmit={handleSubmit}>
+            <div className="space-y-2">
+              <label className="font-label text-xs font-bold text-on-surface uppercase tracking-widest block" htmlFor="email">User Email</label>
+              <input 
+                className="w-full bauhaus-input px-4 py-3 text-on-surface placeholder-outline-variant focus:outline-none" 
+                id="email" 
+                placeholder="NAME@COMPANY.COM" 
+                required 
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            
+            <div className="space-y-2">
+              <div className="flex justify-between items-center">
+                <label className="font-label text-xs font-bold text-on-surface uppercase tracking-widest block" htmlFor="password">Password</label>
+                <Link className="text-secondary text-xs font-bold uppercase hover:underline" to="/forgot-password">Reset</Link>
+              </div>
+              <input 
+                className="w-full bauhaus-input px-4 py-3 text-on-surface placeholder-outline-variant focus:outline-none" 
+                id="password" 
+                placeholder="••••••••" 
+                required 
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
+            
+            <div className="flex items-center gap-3">
+              <div className="relative flex items-center">
+                <input className="w-6 h-6 border-2 border-primary rounded-none text-primary focus:ring-0 cursor-pointer" id="remember" type="checkbox"/>
+              </div>
+              <label className="font-label text-xs font-bold uppercase tracking-tighter cursor-pointer" htmlFor="remember">Persist Session</label>
+            </div>
+            
+            <button 
+              className="w-full bg-primary-fixed bauhaus-button text-on-primary-container font-bold uppercase tracking-widest py-5 flex justify-center items-center gap-3" 
+              id="submit-btn" 
+              type="submit"
+              disabled={submitting}
+            >
+              <span>{submitting ? 'Processing' : 'Authenticate'}</span>
+              {submitting && <div className="spinner-bauhaus"></div>}
+            </button>
+          </form>
+          
+          <div className="mt-10 pt-8 border-t-2 border-primary/10">
+            <p className="font-body text-sm font-medium text-center">
+              New user? 
+              <Link className="text-secondary font-bold uppercase hover:underline ml-1" to="/signup">Create Account</Link>
+            </p>
+          </div>
+        </div>
+      </main>
+      
+      <footer className="z-20 flex flex-col md:flex-row justify-between items-center gap-6 px-10 py-10 w-full bg-primary text-on-primary">
+        <div className="font-label text-xs font-bold uppercase tracking-widest">
+            © 2024 Oppex Security Systems / Form Follows Function
+        </div>
+        <div className="flex gap-8">
+          <a className="font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors" href="#">Privacy</a>
+          <a className="font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors" href="#">Terms</a>
+          <a className="font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors" href="#">Support</a>
+        </div>
+      </footer>
     </div>
   );
 }

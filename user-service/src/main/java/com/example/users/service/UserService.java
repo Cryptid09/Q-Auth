@@ -14,6 +14,8 @@ import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 import org.jboss.logging.Logger;
 
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import java.util.UUID;
 
 /**
@@ -133,5 +135,51 @@ public class UserService {
         User user = userRepository.findByIdOptional(id)
                 .orElseThrow(() -> new jakarta.ws.rs.NotFoundException("User not found"));
         return UserMapper.toResponse(user);
+    }
+
+    /**
+     * Generates a password reset token for a user and triggers the reset email.
+     *
+     * @param email the user's email
+     */
+    @Transactional
+    public void generatePasswordResetToken(String email) {
+        LOG.infof("Password reset requested for email: %s", email);
+        userRepository.findByEmail(email).ifPresent(user -> {
+            String token = verificationService.generateToken();
+            user.resetToken = token;
+            user.resetTokenExpiry = Instant.now().plus(1, ChronoUnit.HOURS);
+            userRepository.persist(user);
+
+            // Assuming baseUrl is something like http://localhost:3001/verify
+            // We'll construct the reset URL pointing to the gateway's reset-password route
+            String resetUrl = "http://localhost:3001/reset-password?token=" + token;
+            emailService.sendPasswordResetEmail(user.email, resetUrl);
+        });
+    }
+
+    /**
+     * Resets a user's password using a valid reset token.
+     *
+     * @param token the reset token
+     * @param newPassword the new password to set
+     * @throws InvalidTokenException if token is invalid or expired
+     */
+    @Transactional
+    public void resetPassword(String token, String newPassword) {
+        LOG.infof("Attempting password reset with token: %s", token);
+        User user = userRepository.findByResetToken(token)
+                .orElseThrow(InvalidTokenException::new);
+
+        if (user.resetTokenExpiry == null || user.resetTokenExpiry.isBefore(Instant.now())) {
+            throw new InvalidTokenException();
+        }
+
+        user.passwordHash = passwordService.hashPassword(newPassword);
+        user.resetToken = null;
+        user.resetTokenExpiry = null;
+        userRepository.persist(user);
+
+        LOG.infof("Password successfully reset for user: %s", user.id);
     }
 }

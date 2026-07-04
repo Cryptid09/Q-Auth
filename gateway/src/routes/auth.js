@@ -27,6 +27,42 @@ router.post('/signup', async (req, res) => {
 });
 
 /**
+ * POST /forgot-password — Request a password reset email.
+ */
+router.post('/forgot-password', async (req, res) => {
+  try {
+    const { email } = req.body;
+    if (!email) {
+      return res.status(400).json({ error: 'Email is required' });
+    }
+    const result = await quarkusClient.requestPasswordReset(email);
+    res.status(200).json(result);
+  } catch (error) {
+    const status = error.response?.status || 500;
+    const data = error.response?.data || { error: 'Password reset request failed' };
+    res.status(status).json(data);
+  }
+});
+
+/**
+ * POST /reset-password — Reset password with token.
+ */
+router.post('/reset-password', async (req, res) => {
+  try {
+    const { token, newPassword } = req.body;
+    if (!token || !newPassword) {
+      return res.status(400).json({ error: 'Token and new password are required' });
+    }
+    const result = await quarkusClient.resetPassword(token, newPassword);
+    res.status(200).json(result);
+  } catch (error) {
+    const status = error.response?.status || 500;
+    const data = error.response?.data || { error: 'Password reset failed' };
+    res.status(status).json(data);
+  }
+});
+
+/**
  * POST /login — Authenticate a user and create a session.
  * Proxies to Quarkus POST /users/login, then stores user in session.
  */

@@ -61,6 +61,30 @@ export function AuthProvider({ children }) {
     }
   }, []);
 
+  async function requestPasswordReset(email) {
+    setError(null);
+    try {
+      const { data } = await client.post('/forgot-password', { email });
+      return data;
+    } catch (err) {
+      const message = err.response?.data?.error || 'Password reset request failed';
+      setError(message);
+      throw new Error(message);
+    }
+  }
+
+  async function resetPassword(token, newPassword) {
+    setError(null);
+    try {
+      const { data } = await client.post('/reset-password', { token, newPassword });
+      return data;
+    } catch (err) {
+      const message = err.response?.data?.error || 'Password reset failed';
+      setError(message);
+      throw new Error(message);
+    }
+  }
+
   function clearError() {
     setError(null);
   }
@@ -72,6 +96,8 @@ export function AuthProvider({ children }) {
     signup,
     login,
     logout,
+    requestPasswordReset,
+    resetPassword,
     clearError,
     refreshUser: checkSession,
   };

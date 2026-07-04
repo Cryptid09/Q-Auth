@@ -1,5 +1,7 @@
 package com.example.users.resource;
 
+import com.example.users.dto.ForgotPasswordRequest;
+import com.example.users.dto.ResetPasswordRequest;
 import com.example.users.dto.LoginRequest;
 import com.example.users.dto.MessageResponse;
 import com.example.users.dto.SignupRequest;
@@ -16,6 +18,7 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
 import org.jboss.resteasy.reactive.RestResponse;
+import io.smallrye.common.annotation.Blocking;
 
 import java.net.URI;
 import java.util.UUID;
@@ -27,6 +30,7 @@ import java.util.UUID;
 @Path("/users")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
+@Blocking
 public class UserResource {
 
     private final UserService userService;
@@ -85,5 +89,31 @@ public class UserResource {
     public RestResponse<UserResponse> getUser(@PathParam("id") UUID id) {
         UserResponse response = userService.getUserById(id);
         return RestResponse.ok(response);
+    }
+
+    /**
+     * POST /users/forgot-password — Request a password reset.
+     *
+     * @param request the forgot password request payload
+     * @return 200 OK with a success message
+     */
+    @POST
+    @Path("/forgot-password")
+    public RestResponse<MessageResponse> forgotPassword(@Valid ForgotPasswordRequest request) {
+        userService.generatePasswordResetToken(request.email());
+        return RestResponse.ok(new MessageResponse("Password reset email sent"));
+    }
+
+    /**
+     * POST /users/reset-password — Reset password using a token.
+     *
+     * @param request the reset password request payload
+     * @return 200 OK with a success message
+     */
+    @POST
+    @Path("/reset-password")
+    public RestResponse<MessageResponse> resetPassword(@Valid ResetPasswordRequest request) {
+        userService.resetPassword(request.token(), request.newPassword());
+        return RestResponse.ok(new MessageResponse("Password successfully reset"));
     }
 }

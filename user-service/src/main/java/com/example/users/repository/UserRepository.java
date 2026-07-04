@@ -42,4 +42,14 @@ public class UserRepository implements PanacheRepositoryBase<User, UUID> {
     public boolean existsByEmail(String email) {
         return count("email", email) > 0;
     }
+
+    /**
+     * Finds a user by their reset token.
+     *
+     * @param token the reset token
+     * @return an Optional containing the user if found
+     */
+    public Optional<User> findByResetToken(String token) {
+        return find("resetToken", token).firstResultOptional();
+    }
 }
