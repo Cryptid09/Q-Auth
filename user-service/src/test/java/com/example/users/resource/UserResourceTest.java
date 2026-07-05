@@ -2,6 +2,7 @@ package com.example.users.resource;
 
 import com.example.users.dto.LoginRequest;
 import com.example.users.dto.SignupRequest;
+import com.example.users.dto.GoogleAuthRequest;
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.MethodOrderer;
@@ -163,5 +164,23 @@ class UserResourceTest {
                 .get("/users/00000000-0000-0000-0000-000000000000")
                 .then()
                 .statusCode(404);
+    }
+
+    @Test
+    @Order(11)
+    void googleLogin_shouldReturn200() {
+        // {"email":"google@oppex.dev","sub":"google123"} base64url encoded
+        String token = "header.eyJlbWFpbCI6Imdvb2dsZUBvcHBleC5kZXYiLCJzdWIiOiJnb29nbGUxMjMifQ.signature";
+        GoogleAuthRequest request = new GoogleAuthRequest(token);
+
+        given()
+                .contentType(ContentType.JSON)
+                .body(request)
+                .when()
+                .post("/users/google")
+                .then()
+                .statusCode(200)
+                .body("email", equalTo("google@oppex.dev"))
+                .body("verified", equalTo(true));
     }
 }

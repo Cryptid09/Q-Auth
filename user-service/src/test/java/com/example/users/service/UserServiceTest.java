@@ -141,4 +141,32 @@ class UserServiceTest {
 
         assertThrows(InvalidTokenException.class, () -> userService.verifyEmail("bad-token"));
     }
+
+    @Test
+    void loginWithGoogle_withValidTokenAndNewUser_shouldCreateUser() {
+        // {"email":"google@oppex.dev","sub":"google123"} base64url encoded
+        String token = "header.eyJlbWFpbCI6Imdvb2dsZUBvcHBleC5kZXYiLCJzdWIiOiJnb29nbGUxMjMifQ.signature";
+        
+        when(userRepository.findByGoogleId("google123")).thenReturn(Optional.empty());
+        when(userRepository.findByEmail("google@oppex.dev")).thenReturn(Optional.empty());
+        doNothing().when(userRepository).persist(any(User.class));
+
+        UserResponse response = userService.loginWithGoogle(token);
+
+        assertNotNull(response);
+        assertEquals("google@oppex.dev", response.email());
+        assertTrue(response.verified());
+
+        ArgumentCaptor<User> captor = ArgumentCaptor.forClass(User.class);
+        verify(userRepository).persist(captor.capture());
+        assertEquals("google123", captor.getValue().googleId);
+        assertEquals("GOOGLE", captor.getValue().authProvider);
+    }
+
+    @Test
+    void loginWithGoogle_withInvalidToken_shouldThrow401() {
+        String token = "invalid.token"; // Only 2 parts, should fail
+
+        assertThrows(InvalidCredentialsException.class, () -> userService.loginWithGoogle(token));
+    }
 }

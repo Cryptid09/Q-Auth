@@ -1,0 +1,3799 @@
+
+> oppex-frontend@1.0.0 test
+> vitest run --reporter=verbose
+
+
+ RUN  v3.2.6 /home/cryptid/E/Oppex-a/frontend
+
+ × __tests__/ProtectedRoute.test.jsx > ProtectedRoute > redirects to login when not authenticated 6600ms
+   → Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ✓ __tests__/ProtectedRoute.test.jsx > ProtectedRoute > renders children when authenticated 1275ms
+ × __tests__/Signup.test.jsx > Signup Page > renders signup form with email and password fields 8220ms
+   → Found a label with the text of: /email/i, however no form control was found associated to that label. Make sure you're using the "for" attribute or "aria-labelledby" attribute correctly.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col min-h-screen relative overflow-x-hidden bg-background"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"fixed inset-0 grid-pattern pointer-events-none"[39m
+        [36m/>[39m
+        [36m<header[39m
+          [33mclass[39m=[32m"z-20 flex justify-between items-center px-6 py-6 w-full bg-transparent"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"font-display text-2xl font-bold uppercase tracking-tighter text-primary border-b-4 border-primary-fixed"[39m
+          [36m>[39m
+            [0mOppex Portal[0m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex gap-4 items-center"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"text-on-surface hover:text-secondary transition-colors"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"material-symbols-outlined text-3xl"[39m
+              [36m>[39m
+                [0mhelp_outline[0m
+              [36m</span>[39m
+            [36m</button>[39m
+          [36m</div>[39m
+        [36m</header>[39m
+        [36m<main[39m
+          [33mclass[39m=[32m"flex-grow z-10 flex items-center justify-center px-6 py-12"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"bauhaus-card w-full max-w-[440px] p-8 md:p-10 relative "[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"absolute -top-6 -right-6 w-12 h-12 bg-secondary border-4 border-primary"[39m
+            [36m/>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"absolute -bottom-6 -left-6 w-12 h-12 bg-tertiary rounded-full border-4 border-primary"[39m
+            [36m/>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"mb-10"[39m
+            [36m>[39m
+              [36m<h1[39m
+                [33mclass[39m=[32m"font-display text-4xl font-bold uppercase tracking-tight text-on-surface mb-2"[39m
+              [36m>[39m
+                [0mCreate Account[0m
+              [36m</h1>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"h-1.5 w-16 bg-primary-fixed mb-4"[39m
+              [36m/>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"font-body text-on-surface-variant"[39m
+              [36m>[39m
+                [0mJoin Oppex Portal today.[0m
+              [36m</p>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"mb-6 flex justify-center"[39m
+            [36m>[39m
+              [36m<button>[39m
+                [0mSign in with Google[0m
+              [36m</button>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex items-center mb-6 before:flex-1 before:border-t-2 before:border-primary/10 after:flex-1 after:border-t-2 after:border-primary/10"[39m
+            [36m>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"text-center font-label text-xs uppercase tracking-widest text-on-surface-variant mx-4"[39m
+              [36m>[39m
+                [0mOr Signup With Email[0m
+              [36m</p>[39m
+            [36m</div>[39m
+            [36m<form[39m
+              [33mclass[39m=[32m"space-y-8"[39m
+              [33mid[39m=[32m"signup-form"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"space-y-2"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"font-label text-xs font-bold text-on-surface uppercase tracking-widest block"[39m
+                  [33mfor[39m=[32m"email"[39m
+                [36m>[39m
+                  [0mUser Email[0m
+                [36m</label>[39m
+                [36m<input[39m
+                  [33mautocomplete[39m=[32m"email"[39m
+                  [33mclass[39m=[32m"w-full bauhaus-input px-4 py-3 text-on-surface placeholder-outline-variant focus:outline-none"[39m
+                  [33mid[39m=[32m"signup-email"[39m
+                  [33mplaceholder[39m=[32m"NAME@COMPANY.COM"[39m
+                  [33mrequired[39m=[32m""[39m
+                  [33mtype[39m=[32m"email"[39m
+                  [33mvalue[39m=[32m""[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"space-y-2"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"font-label text-xs font-bold text-on-surface uppercase tracking-widest block"[39m
+                  [33mfor[39m=[32m"password"[39m
+                [36m>[39m
+                  [0mPassword[0m
+                [36m</label>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"relative"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mautocomplete[39m=[32m"new-password"[39m
+                    [33mclass[39m=[32m"w-full bauhaus-input px-4 py-3 pr-12 text-on-surface placeholder-outline-variant focus:outline-none"[39m
+                    [33mid[39m=[32m"signup-password"[39m
+                    [33mminlength[39m=[32m"8"[39m
+                    [33mplaceholder[39m=[32m"AT LEAST 8 CHARACTERS"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mtype[39m=[32m"password"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary transition-colors"[39m
+                    [33mtabindex[39m=[32m"-1"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"material-symbols-outlined text-[20px]"[39m
+                    [36m>[39m
+                      [0mvisibility[0m
+                    [36m</span>[39m
+                  [36m</button>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"w-full bg-primary-fixed bauhaus-button text-on-primary-container font-bold uppercase tracking-widest py-5 flex justify-center items-center gap-3"[39m
+                [33mid[39m=[32m"signup-submit"[39m
+                [33mtype[39m=[32m"submit"[39m
+              [36m>[39m
+                [36m<span>[39m
+                  [0mCreate Account[0m
+                [36m</span>[39m
+              [36m</button>[39m
+            [36m</form>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"mt-10 pt-8 border-t-2 border-primary/10"[39m
+            [36m>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"font-body text-sm font-medium text-center"[39m
+              [36m>[39m
+                [0mAlready have an account?[0m
+                [36m<a[39m
+                  [33mclass[39m=[32m"text-secondary font-bold uppercase hover:underline ml-1"[39m
+                  [33mdata-discover[39m=[32m"true"[39m
+                  [33mhref[39m=[32m"/login"[39m
+                [36m>[39m
+                  [0mSign In[0m
+                [36m</a>[39m
+              [36m</p>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</main>[39m
+        [36m<footer[39m
+          [33mclass[39m=[32m"z-20 flex flex-col md:flex-row justify-between items-center gap-6 px-10 py-10 w-full bg-primary text-on-primary"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"font-label text-xs font-bold uppercase tracking-widest"[39m
+          [36m>[39m
+            [0m© 2024 Oppex Security Systems / Form Follows Function[0m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex gap-8"[39m
+          [36m>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+              [33mhref[39m=[32m"#"[39m
+            [36m>[39m
+              [0mPrivacy[0m
+            [36m</a>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+              [33mhref[39m=[32m"#"[39m
+            [36m>[39m
+              [0mTerms[0m
+            [36m</a>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+              [33mhref[39m=[32m"#"[39m
+            [36m>[39m
+              [0mSupport[0m
+            [36m</a>[39m
+          [36m</div>[39m
+        [36m</footer>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<html>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col min-h-screen relative overflow-x-hidden bg-background"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"fixed inset-0 grid-pattern pointer-events-none"[39m
+          [36m/>[39m
+          [36m<header[39m
+            [33mclass[39m=[32m"z-20 flex justify-between items-center px-6 py-6 w-full bg-transparent"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"font-display text-2xl font-bold uppercase tracking-tighter text-primary border-b-4 border-primary-fixed"[39m
+            [36m>[39m
+              [0mOppex Portal[0m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex gap-4 items-center"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"text-on-surface hover:text-secondary transition-colors"[39m
+              [36m>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"material-symbols-outlined text-3xl"[39m
+                [36m>[39m
+                  [0mhelp_outline[0m
+                [36m</span>[39m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</header>[39m
+          [36m<main[39m
+            [33mclass[39m=[32m"flex-grow z-10 flex items-center justify-center px-6 py-12"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"bauhaus-card w-full max-w-[440px] p-8 md:p-10 relative "[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"absolute -top-6 -right-6 w-12 h-12 bg-secondary border-4 border-primary"[39m
+              [36m/>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"absolute -bottom-6 -left-6 w-12 h-12 bg-tertiary rounded-full border-4 border-primary"[39m
+              [36m/>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"mb-10"[39m
+              [36m>[39m
+                [36m<h1[39m
+                  [33mclass[39m=[32m"font-display text-4xl font-bold uppercase tracking-tight text-on-surface mb-2"[39m
+                [36m>[39m
+                  [0mCreate Account[0m
+                [36m</h1>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"h-1.5 w-16 bg-primary-fixed mb-4"[39m
+                [36m/>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"font-body text-on-surface-variant"[39m
+                [36m>[39m
+                  [0mJoin Oppex Portal today.[0m
+                [36m</p>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"mb-6 flex justify-center"[39m
+              [36m>[39m
+                [36m<button>[39m
+                  [0mSign in with Google[0m
+                [36m</button>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"flex items-center mb-6 before:flex-1 before:border-t-2 before:border-primary/10 after:flex-1 after:border-t-2 after:border-primary/10"[39m
+              [36m>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"text-center font-label text-xs uppercase tracking-widest text-on-surface-variant mx-4"[39m
+                [36m>[39m
+                  [0mOr Signup With Email[0m
+                [36m</p>[39m
+              [36m</div>[39m
+              [36m<form[39m
+                [33mclass[39m=[32m"space-y-8"[39m
+                [33mid[39m=[32m"signup-form"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"space-y-2"[39m
+                [36m>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"font-label text-xs font-bold text-on-surface uppercase tracking-widest block"[39m
+                    [33mfor[39m=[32m"email"[39m
+                  [36m>[39m
+                    [0mUser Email[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mautocomplete[39m=[32m"email"[39m
+                    [33mclass[39m=[32m"w-full bauhaus-input px-4 py-3 text-on-surface placeholder-outline-variant focus:outline-none"[39m
+                    [33mid[39m=[32m"signup-email"[39m
+                    [33mplaceholder[39m=[32m"NAME@COMPANY.COM"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mtype[39m=[32m"email"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"space-y-2"[39m
+                [36m>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"font-label text-xs font-bold text-on-surface uppercase tracking-widest block"[39m
+                    [33mfor[39m=[32m"password"[39m
+                  [36m>[39m
+                    [0mPassword[0m
+                  [36m</label>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"relative"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mautocomplete[39m=[32m"new-password"[39m
+                      [33mclass[39m=[32m"w-full bauhaus-input px-4 py-3 pr-12 text-on-surface placeholder-outline-variant focus:outline-none"[39m
+                      [33mid[39m=[32m"signup-password"[39m
+                      [33mminlength[39m=[32m"8"[39m
+                      [33mplaceholder[39m=[32m"AT LEAST 8 CHARACTERS"[39m
+                      [33mrequired[39m=[32m""[39m
+                      [33mtype[39m=[32m"password"[39m
+                      [33mvalue[39m=[32m""[39m
+                    [36m/>[39m
+                    [36m<button[39m
+                      [33mclass[39m=[32m"absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary transition-colors"[39m
+                      [33mtabindex[39m=[32m"-1"[39m
+                      [33mtype[39m=[32m"button"[39m
+                    [36m>[39m
+                      [36m<span[39m
+                        [33mclass[39m=[32m"material-symbols-outlined text-[20px]"[39m
+                      [36m>[39m
+                        [0mvisibility[0m
+                      [36m</span>[39m
+                    [36m</button>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"w-full bg-primary-fixed bauhaus-button text-on-primary-container font-bold uppercase tracking-widest py-5 flex justify-center items-center gap-3"[39m
+                  [33mid[39m=[32m"signup-submit"[39m
+                  [33mtype[39m=[32m"submit"[39m
+                [36m>[39m
+                  [36m<span>[39m
+                    [0mCreate Account[0m
+                  [36m</span>[39m
+                [36m</button>[39m
+              [36m</form>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"mt-10 pt-8 border-t-2 border-primary/10"[39m
+              [36m>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"font-body text-sm font-medium text-center"[39m
+                [36m>[39m
+                  [0mAlready have an account?[0m
+                  [36m<a[39m
+                    [33mclass[39m=[32m"text-secondary font-bold uppercase hover:underline ml-1"[39m
+                    [33mdata-discover[39m=[32m"true"[39m
+                    [33mhref[39m=[32m"/login"[39m
+                  [36m>[39m
+                    [0mSign In[0m
+                  [36m</a>[39m
+                [36m</p>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</main>[39m
+          [36m<footer[39m
+            [33mclass[39m=[32m"z-20 flex flex-col md:flex-row justify-between items-center gap-6 px-10 py-10 w-full bg-primary text-on-primary"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"font-label text-xs font-bold uppercase tracking-widest"[39m
+            [36m>[39m
+              [0m© 2024 Oppex Security Systems / Form Follows Function[0m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex gap-8"[39m
+            [36m>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+                [33mhref[39m=[32m"#"[39m
+              [36m>[39m
+                [0mPrivacy[0m
+              [36m</a>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+                [33mhref[39m=[32m"#"[39m
+              [36m>[39m
+                [0mTerms[0m
+              [36m</a>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+                [33mhref[39m=[32m"#"[39m
+              [36m>[39m
+                [0mSupport[0m
+              [36m</a>[39m
+            [36m</div>[39m
+          [36m</footer>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</body>[39m
+[36m</html>[39m
+ × __tests__/Login.test.jsx > Login Page > renders login form with email and password fields 9404ms
+   → Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ × __tests__/Signup.test.jsx > Signup Page > shows success message after registration 6338ms
+   → Found a label with the text of: /email/i, however no form control was found associated to that label. Make sure you're using the "for" attribute or "aria-labelledby" attribute correctly.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col min-h-screen relative overflow-x-hidden bg-background"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"fixed inset-0 grid-pattern pointer-events-none"[39m
+        [36m/>[39m
+        [36m<header[39m
+          [33mclass[39m=[32m"z-20 flex justify-between items-center px-6 py-6 w-full bg-transparent"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"font-display text-2xl font-bold uppercase tracking-tighter text-primary border-b-4 border-primary-fixed"[39m
+          [36m>[39m
+            [0mOppex Portal[0m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex gap-4 items-center"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"text-on-surface hover:text-secondary transition-colors"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"material-symbols-outlined text-3xl"[39m
+              [36m>[39m
+                [0mhelp_outline[0m
+              [36m</span>[39m
+            [36m</button>[39m
+          [36m</div>[39m
+        [36m</header>[39m
+        [36m<main[39m
+          [33mclass[39m=[32m"flex-grow z-10 flex items-center justify-center px-6 py-12"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"bauhaus-card w-full max-w-[440px] p-8 md:p-10 relative "[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"absolute -top-6 -right-6 w-12 h-12 bg-secondary border-4 border-primary"[39m
+            [36m/>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"absolute -bottom-6 -left-6 w-12 h-12 bg-tertiary rounded-full border-4 border-primary"[39m
+            [36m/>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"mb-10"[39m
+            [36m>[39m
+              [36m<h1[39m
+                [33mclass[39m=[32m"font-display text-4xl font-bold uppercase tracking-tight text-on-surface mb-2"[39m
+              [36m>[39m
+                [0mCreate Account[0m
+              [36m</h1>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"h-1.5 w-16 bg-primary-fixed mb-4"[39m
+              [36m/>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"font-body text-on-surface-variant"[39m
+              [36m>[39m
+                [0mJoin Oppex Portal today.[0m
+              [36m</p>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"mb-6 flex justify-center"[39m
+            [36m>[39m
+              [36m<button>[39m
+                [0mSign in with Google[0m
+              [36m</button>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex items-center mb-6 before:flex-1 before:border-t-2 before:border-primary/10 after:flex-1 after:border-t-2 after:border-primary/10"[39m
+            [36m>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"text-center font-label text-xs uppercase tracking-widest text-on-surface-variant mx-4"[39m
+              [36m>[39m
+                [0mOr Signup With Email[0m
+              [36m</p>[39m
+            [36m</div>[39m
+            [36m<form[39m
+              [33mclass[39m=[32m"space-y-8"[39m
+              [33mid[39m=[32m"signup-form"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"space-y-2"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"font-label text-xs font-bold text-on-surface uppercase tracking-widest block"[39m
+                  [33mfor[39m=[32m"email"[39m
+                [36m>[39m
+                  [0mUser Email[0m
+                [36m</label>[39m
+                [36m<input[39m
+                  [33mautocomplete[39m=[32m"email"[39m
+                  [33mclass[39m=[32m"w-full bauhaus-input px-4 py-3 text-on-surface placeholder-outline-variant focus:outline-none"[39m
+                  [33mid[39m=[32m"signup-email"[39m
+                  [33mplaceholder[39m=[32m"NAME@COMPANY.COM"[39m
+                  [33mrequired[39m=[32m""[39m
+                  [33mtype[39m=[32m"email"[39m
+                  [33mvalue[39m=[32m""[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"space-y-2"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"font-label text-xs font-bold text-on-surface uppercase tracking-widest block"[39m
+                  [33mfor[39m=[32m"password"[39m
+                [36m>[39m
+                  [0mPassword[0m
+                [36m</label>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"relative"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mautocomplete[39m=[32m"new-password"[39m
+                    [33mclass[39m=[32m"w-full bauhaus-input px-4 py-3 pr-12 text-on-surface placeholder-outline-variant focus:outline-none"[39m
+                    [33mid[39m=[32m"signup-password"[39m
+                    [33mminlength[39m=[32m"8"[39m
+                    [33mplaceholder[39m=[32m"AT LEAST 8 CHARACTERS"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mtype[39m=[32m"password"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary transition-colors"[39m
+                    [33mtabindex[39m=[32m"-1"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"material-symbols-outlined text-[20px]"[39m
+                    [36m>[39m
+                      [0mvisibility[0m
+                    [36m</span>[39m
+                  [36m</button>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"w-full bg-primary-fixed bauhaus-button text-on-primary-container font-bold uppercase tracking-widest py-5 flex justify-center items-center gap-3"[39m
+                [33mid[39m=[32m"signup-submit"[39m
+                [33mtype[39m=[32m"submit"[39m
+              [36m>[39m
+                [36m<span>[39m
+                  [0mCreate Account[0m
+                [36m</span>[39m
+              [36m</button>[39m
+            [36m</form>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"mt-10 pt-8 border-t-2 border-primary/10"[39m
+            [36m>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"font-body text-sm font-medium text-center"[39m
+              [36m>[39m
+                [0mAlready have an account?[0m
+                [36m<a[39m
+                  [33mclass[39m=[32m"text-secondary font-bold uppercase hover:underline ml-1"[39m
+                  [33mdata-discover[39m=[32m"true"[39m
+                  [33mhref[39m=[32m"/login"[39m
+                [36m>[39m
+                  [0mSign In[0m
+                [36m</a>[39m
+              [36m</p>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</main>[39m
+        [36m<footer[39m
+          [33mclass[39m=[32m"z-20 flex flex-col md:flex-row justify-between items-center gap-6 px-10 py-10 w-full bg-primary text-on-primary"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"font-label text-xs font-bold uppercase tracking-widest"[39m
+          [36m>[39m
+            [0m© 2024 Oppex Security Systems / Form Follows Function[0m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex gap-8"[39m
+          [36m>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+              [33mhref[39m=[32m"#"[39m
+            [36m>[39m
+              [0mPrivacy[0m
+            [36m</a>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+              [33mhref[39m=[32m"#"[39m
+            [36m>[39m
+              [0mTerms[0m
+            [36m</a>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+              [33mhref[39m=[32m"#"[39m
+            [36m>[39m
+              [0mSupport[0m
+            [36m</a>[39m
+          [36m</div>[39m
+        [36m</footer>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<html>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col min-h-screen relative overflow-x-hidden bg-background"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"fixed inset-0 grid-pattern pointer-events-none"[39m
+          [36m/>[39m
+          [36m<header[39m
+            [33mclass[39m=[32m"z-20 flex justify-between items-center px-6 py-6 w-full bg-transparent"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"font-display text-2xl font-bold uppercase tracking-tighter text-primary border-b-4 border-primary-fixed"[39m
+            [36m>[39m
+              [0mOppex Portal[0m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex gap-4 items-center"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"text-on-surface hover:text-secondary transition-colors"[39m
+              [36m>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"material-symbols-outlined text-3xl"[39m
+                [36m>[39m
+                  [0mhelp_outline[0m
+                [36m</span>[39m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</header>[39m
+          [36m<main[39m
+            [33mclass[39m=[32m"flex-grow z-10 flex items-center justify-center px-6 py-12"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"bauhaus-card w-full max-w-[440px] p-8 md:p-10 relative "[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"absolute -top-6 -right-6 w-12 h-12 bg-secondary border-4 border-primary"[39m
+              [36m/>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"absolute -bottom-6 -left-6 w-12 h-12 bg-tertiary rounded-full border-4 border-primary"[39m
+              [36m/>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"mb-10"[39m
+              [36m>[39m
+                [36m<h1[39m
+                  [33mclass[39m=[32m"font-display text-4xl font-bold uppercase tracking-tight text-on-surface mb-2"[39m
+                [36m>[39m
+                  [0mCreate Account[0m
+                [36m</h1>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"h-1.5 w-16 bg-primary-fixed mb-4"[39m
+                [36m/>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"font-body text-on-surface-variant"[39m
+                [36m>[39m
+                  [0mJoin Oppex Portal today.[0m
+                [36m</p>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"mb-6 flex justify-center"[39m
+              [36m>[39m
+                [36m<button>[39m
+                  [0mSign in with Google[0m
+                [36m</button>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"flex items-center mb-6 before:flex-1 before:border-t-2 before:border-primary/10 after:flex-1 after:border-t-2 after:border-primary/10"[39m
+              [36m>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"text-center font-label text-xs uppercase tracking-widest text-on-surface-variant mx-4"[39m
+                [36m>[39m
+                  [0mOr Signup With Email[0m
+                [36m</p>[39m
+              [36m</div>[39m
+              [36m<form[39m
+                [33mclass[39m=[32m"space-y-8"[39m
+                [33mid[39m=[32m"signup-form"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"space-y-2"[39m
+                [36m>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"font-label text-xs font-bold text-on-surface uppercase tracking-widest block"[39m
+                    [33mfor[39m=[32m"email"[39m
+                  [36m>[39m
+                    [0mUser Email[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mautocomplete[39m=[32m"email"[39m
+                    [33mclass[39m=[32m"w-full bauhaus-input px-4 py-3 text-on-surface placeholder-outline-variant focus:outline-none"[39m
+                    [33mid[39m=[32m"signup-email"[39m
+                    [33mplaceholder[39m=[32m"NAME@COMPANY.COM"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mtype[39m=[32m"email"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"space-y-2"[39m
+                [36m>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"font-label text-xs font-bold text-on-surface uppercase tracking-widest block"[39m
+                    [33mfor[39m=[32m"password"[39m
+                  [36m>[39m
+                    [0mPassword[0m
+                  [36m</label>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"relative"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mautocomplete[39m=[32m"new-password"[39m
+                      [33mclass[39m=[32m"w-full bauhaus-input px-4 py-3 pr-12 text-on-surface placeholder-outline-variant focus:outline-none"[39m
+                      [33mid[39m=[32m"signup-password"[39m
+                      [33mminlength[39m=[32m"8"[39m
+                      [33mplaceholder[39m=[32m"AT LEAST 8 CHARACTERS"[39m
+                      [33mrequired[39m=[32m""[39m
+                      [33mtype[39m=[32m"password"[39m
+                      [33mvalue[39m=[32m""[39m
+                    [36m/>[39m
+                    [36m<button[39m
+                      [33mclass[39m=[32m"absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary transition-colors"[39m
+                      [33mtabindex[39m=[32m"-1"[39m
+                      [33mtype[39m=[32m"button"[39m
+                    [36m>[39m
+                      [36m<span[39m
+                        [33mclass[39m=[32m"material-symbols-outlined text-[20px]"[39m
+                      [36m>[39m
+                        [0mvisibility[0m
+                      [36m</span>[39m
+                    [36m</button>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"w-full bg-primary-fixed bauhaus-button text-on-primary-container font-bold uppercase tracking-widest py-5 flex justify-center items-center gap-3"[39m
+                  [33mid[39m=[32m"signup-submit"[39m
+                  [33mtype[39m=[32m"submit"[39m
+                [36m>[39m
+                  [36m<span>[39m
+                    [0mCreate Account[0m
+                  [36m</span>[39m
+                [36m</button>[39m
+              [36m</form>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"mt-10 pt-8 border-t-2 border-primary/10"[39m
+              [36m>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"font-body text-sm font-medium text-center"[39m
+                [36m>[39m
+                  [0mAlready have an account?[0m
+                  [36m<a[39m
+                    [33mclass[39m=[32m"text-secondary font-bold uppercase hover:underline ml-1"[39m
+                    [33mdata-discover[39m=[32m"true"[39m
+                    [33mhref[39m=[32m"/login"[39m
+                  [36m>[39m
+                    [0mSign In[0m
+                  [36m</a>[39m
+                [36m</p>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</main>[39m
+          [36m<footer[39m
+            [33mclass[39m=[32m"z-20 flex flex-col md:flex-row justify-between items-center gap-6 px-10 py-10 w-full bg-primary text-on-primary"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"font-label text-xs font-bold uppercase tracking-widest"[39m
+            [36m>[39m
+              [0m© 2024 Oppex Security Systems / Form Follows Function[0m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex gap-8"[39m
+            [36m>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+                [33mhref[39m=[32m"#"[39m
+              [36m>[39m
+                [0mPrivacy[0m
+              [36m</a>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+                [33mhref[39m=[32m"#"[39m
+              [36m>[39m
+                [0mTerms[0m
+              [36m</a>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+                [33mhref[39m=[32m"#"[39m
+              [36m>[39m
+                [0mSupport[0m
+              [36m</a>[39m
+            [36m</div>[39m
+          [36m</footer>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</body>[39m
+[36m</html>[39m
+ × __tests__/Signup.test.jsx > Signup Page > shows error on duplicate email 4217ms
+   → Found a label with the text of: /email/i, however no form control was found associated to that label. Make sure you're using the "for" attribute or "aria-labelledby" attribute correctly.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col min-h-screen relative overflow-x-hidden bg-background"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"fixed inset-0 grid-pattern pointer-events-none"[39m
+        [36m/>[39m
+        [36m<header[39m
+          [33mclass[39m=[32m"z-20 flex justify-between items-center px-6 py-6 w-full bg-transparent"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"font-display text-2xl font-bold uppercase tracking-tighter text-primary border-b-4 border-primary-fixed"[39m
+          [36m>[39m
+            [0mOppex Portal[0m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex gap-4 items-center"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"text-on-surface hover:text-secondary transition-colors"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"material-symbols-outlined text-3xl"[39m
+              [36m>[39m
+                [0mhelp_outline[0m
+              [36m</span>[39m
+            [36m</button>[39m
+          [36m</div>[39m
+        [36m</header>[39m
+        [36m<main[39m
+          [33mclass[39m=[32m"flex-grow z-10 flex items-center justify-center px-6 py-12"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"bauhaus-card w-full max-w-[440px] p-8 md:p-10 relative "[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"absolute -top-6 -right-6 w-12 h-12 bg-secondary border-4 border-primary"[39m
+            [36m/>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"absolute -bottom-6 -left-6 w-12 h-12 bg-tertiary rounded-full border-4 border-primary"[39m
+            [36m/>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"mb-10"[39m
+            [36m>[39m
+              [36m<h1[39m
+                [33mclass[39m=[32m"font-display text-4xl font-bold uppercase tracking-tight text-on-surface mb-2"[39m
+              [36m>[39m
+                [0mCreate Account[0m
+              [36m</h1>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"h-1.5 w-16 bg-primary-fixed mb-4"[39m
+              [36m/>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"font-body text-on-surface-variant"[39m
+              [36m>[39m
+                [0mJoin Oppex Portal today.[0m
+              [36m</p>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"mb-6 flex justify-center"[39m
+            [36m>[39m
+              [36m<button>[39m
+                [0mSign in with Google[0m
+              [36m</button>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex items-center mb-6 before:flex-1 before:border-t-2 before:border-primary/10 after:flex-1 after:border-t-2 after:border-primary/10"[39m
+            [36m>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"text-center font-label text-xs uppercase tracking-widest text-on-surface-variant mx-4"[39m
+              [36m>[39m
+                [0mOr Signup With Email[0m
+              [36m</p>[39m
+            [36m</div>[39m
+            [36m<form[39m
+              [33mclass[39m=[32m"space-y-8"[39m
+              [33mid[39m=[32m"signup-form"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"space-y-2"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"font-label text-xs font-bold text-on-surface uppercase tracking-widest block"[39m
+                  [33mfor[39m=[32m"email"[39m
+                [36m>[39m
+                  [0mUser Email[0m
+                [36m</label>[39m
+                [36m<input[39m
+                  [33mautocomplete[39m=[32m"email"[39m
+                  [33mclass[39m=[32m"w-full bauhaus-input px-4 py-3 text-on-surface placeholder-outline-variant focus:outline-none"[39m
+                  [33mid[39m=[32m"signup-email"[39m
+                  [33mplaceholder[39m=[32m"NAME@COMPANY.COM"[39m
+                  [33mrequired[39m=[32m""[39m
+                  [33mtype[39m=[32m"email"[39m
+                  [33mvalue[39m=[32m""[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"space-y-2"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"font-label text-xs font-bold text-on-surface uppercase tracking-widest block"[39m
+                  [33mfor[39m=[32m"password"[39m
+                [36m>[39m
+                  [0mPassword[0m
+                [36m</label>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"relative"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mautocomplete[39m=[32m"new-password"[39m
+                    [33mclass[39m=[32m"w-full bauhaus-input px-4 py-3 pr-12 text-on-surface placeholder-outline-variant focus:outline-none"[39m
+                    [33mid[39m=[32m"signup-password"[39m
+                    [33mminlength[39m=[32m"8"[39m
+                    [33mplaceholder[39m=[32m"AT LEAST 8 CHARACTERS"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mtype[39m=[32m"password"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary transition-colors"[39m
+                    [33mtabindex[39m=[32m"-1"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"material-symbols-outlined text-[20px]"[39m
+                    [36m>[39m
+                      [0mvisibility[0m
+                    [36m</span>[39m
+                  [36m</button>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"w-full bg-primary-fixed bauhaus-button text-on-primary-container font-bold uppercase tracking-widest py-5 flex justify-center items-center gap-3"[39m
+                [33mid[39m=[32m"signup-submit"[39m
+                [33mtype[39m=[32m"submit"[39m
+              [36m>[39m
+                [36m<span>[39m
+                  [0mCreate Account[0m
+                [36m</span>[39m
+              [36m</button>[39m
+            [36m</form>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"mt-10 pt-8 border-t-2 border-primary/10"[39m
+            [36m>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"font-body text-sm font-medium text-center"[39m
+              [36m>[39m
+                [0mAlready have an account?[0m
+                [36m<a[39m
+                  [33mclass[39m=[32m"text-secondary font-bold uppercase hover:underline ml-1"[39m
+                  [33mdata-discover[39m=[32m"true"[39m
+                  [33mhref[39m=[32m"/login"[39m
+                [36m>[39m
+                  [0mSign In[0m
+                [36m</a>[39m
+              [36m</p>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</main>[39m
+        [36m<footer[39m
+          [33mclass[39m=[32m"z-20 flex flex-col md:flex-row justify-between items-center gap-6 px-10 py-10 w-full bg-primary text-on-primary"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"font-label text-xs font-bold uppercase tracking-widest"[39m
+          [36m>[39m
+            [0m© 2024 Oppex Security Systems / Form Follows Function[0m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex gap-8"[39m
+          [36m>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+              [33mhref[39m=[32m"#"[39m
+            [36m>[39m
+              [0mPrivacy[0m
+            [36m</a>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+              [33mhref[39m=[32m"#"[39m
+            [36m>[39m
+              [0mTerms[0m
+            [36m</a>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+              [33mhref[39m=[32m"#"[39m
+            [36m>[39m
+              [0mSupport[0m
+            [36m</a>[39m
+          [36m</div>[39m
+        [36m</footer>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<html>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col min-h-screen relative overflow-x-hidden bg-background"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"fixed inset-0 grid-pattern pointer-events-none"[39m
+          [36m/>[39m
+          [36m<header[39m
+            [33mclass[39m=[32m"z-20 flex justify-between items-center px-6 py-6 w-full bg-transparent"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"font-display text-2xl font-bold uppercase tracking-tighter text-primary border-b-4 border-primary-fixed"[39m
+            [36m>[39m
+              [0mOppex Portal[0m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex gap-4 items-center"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"text-on-surface hover:text-secondary transition-colors"[39m
+              [36m>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"material-symbols-outlined text-3xl"[39m
+                [36m>[39m
+                  [0mhelp_outline[0m
+                [36m</span>[39m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</header>[39m
+          [36m<main[39m
+            [33mclass[39m=[32m"flex-grow z-10 flex items-center justify-center px-6 py-12"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"bauhaus-card w-full max-w-[440px] p-8 md:p-10 relative "[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"absolute -top-6 -right-6 w-12 h-12 bg-secondary border-4 border-primary"[39m
+              [36m/>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"absolute -bottom-6 -left-6 w-12 h-12 bg-tertiary rounded-full border-4 border-primary"[39m
+              [36m/>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"mb-10"[39m
+              [36m>[39m
+                [36m<h1[39m
+                  [33mclass[39m=[32m"font-display text-4xl font-bold uppercase tracking-tight text-on-surface mb-2"[39m
+                [36m>[39m
+                  [0mCreate Account[0m
+                [36m</h1>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"h-1.5 w-16 bg-primary-fixed mb-4"[39m
+                [36m/>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"font-body text-on-surface-variant"[39m
+                [36m>[39m
+                  [0mJoin Oppex Portal today.[0m
+                [36m</p>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"mb-6 flex justify-center"[39m
+              [36m>[39m
+                [36m<button>[39m
+                  [0mSign in with Google[0m
+                [36m</button>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"flex items-center mb-6 before:flex-1 before:border-t-2 before:border-primary/10 after:flex-1 after:border-t-2 after:border-primary/10"[39m
+              [36m>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"text-center font-label text-xs uppercase tracking-widest text-on-surface-variant mx-4"[39m
+                [36m>[39m
+                  [0mOr Signup With Email[0m
+                [36m</p>[39m
+              [36m</div>[39m
+              [36m<form[39m
+                [33mclass[39m=[32m"space-y-8"[39m
+                [33mid[39m=[32m"signup-form"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"space-y-2"[39m
+                [36m>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"font-label text-xs font-bold text-on-surface uppercase tracking-widest block"[39m
+                    [33mfor[39m=[32m"email"[39m
+                  [36m>[39m
+                    [0mUser Email[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mautocomplete[39m=[32m"email"[39m
+                    [33mclass[39m=[32m"w-full bauhaus-input px-4 py-3 text-on-surface placeholder-outline-variant focus:outline-none"[39m
+                    [33mid[39m=[32m"signup-email"[39m
+                    [33mplaceholder[39m=[32m"NAME@COMPANY.COM"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mtype[39m=[32m"email"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"space-y-2"[39m
+                [36m>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"font-label text-xs font-bold text-on-surface uppercase tracking-widest block"[39m
+                    [33mfor[39m=[32m"password"[39m
+                  [36m>[39m
+                    [0mPassword[0m
+                  [36m</label>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"relative"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mautocomplete[39m=[32m"new-password"[39m
+                      [33mclass[39m=[32m"w-full bauhaus-input px-4 py-3 pr-12 text-on-surface placeholder-outline-variant focus:outline-none"[39m
+                      [33mid[39m=[32m"signup-password"[39m
+                      [33mminlength[39m=[32m"8"[39m
+                      [33mplaceholder[39m=[32m"AT LEAST 8 CHARACTERS"[39m
+                      [33mrequired[39m=[32m""[39m
+                      [33mtype[39m=[32m"password"[39m
+                      [33mvalue[39m=[32m""[39m
+                    [36m/>[39m
+                    [36m<button[39m
+                      [33mclass[39m=[32m"absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary transition-colors"[39m
+                      [33mtabindex[39m=[32m"-1"[39m
+                      [33mtype[39m=[32m"button"[39m
+                    [36m>[39m
+                      [36m<span[39m
+                        [33mclass[39m=[32m"material-symbols-outlined text-[20px]"[39m
+                      [36m>[39m
+                        [0mvisibility[0m
+                      [36m</span>[39m
+                    [36m</button>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"w-full bg-primary-fixed bauhaus-button text-on-primary-container font-bold uppercase tracking-widest py-5 flex justify-center items-center gap-3"[39m
+                  [33mid[39m=[32m"signup-submit"[39m
+                  [33mtype[39m=[32m"submit"[39m
+                [36m>[39m
+                  [36m<span>[39m
+                    [0mCreate Account[0m
+                  [36m</span>[39m
+                [36m</button>[39m
+              [36m</form>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"mt-10 pt-8 border-t-2 border-primary/10"[39m
+              [36m>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"font-body text-sm font-medium text-center"[39m
+                [36m>[39m
+                  [0mAlready have an account?[0m
+                  [36m<a[39m
+                    [33mclass[39m=[32m"text-secondary font-bold uppercase hover:underline ml-1"[39m
+                    [33mdata-discover[39m=[32m"true"[39m
+                    [33mhref[39m=[32m"/login"[39m
+                  [36m>[39m
+                    [0mSign In[0m
+                  [36m</a>[39m
+                [36m</p>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</main>[39m
+          [36m<footer[39m
+            [33mclass[39m=[32m"z-20 flex flex-col md:flex-row justify-between items-center gap-6 px-10 py-10 w-full bg-primary text-on-primary"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"font-label text-xs font-bold uppercase tracking-widest"[39m
+            [36m>[39m
+              [0m© 2024 Oppex Security Systems / Form Follows Function[0m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex gap-8"[39m
+            [36m>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+                [33mhref[39m=[32m"#"[39m
+              [36m>[39m
+                [0mPrivacy[0m
+              [36m</a>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+                [33mhref[39m=[32m"#"[39m
+              [36m>[39m
+                [0mTerms[0m
+              [36m</a>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+                [33mhref[39m=[32m"#"[39m
+              [36m>[39m
+                [0mSupport[0m
+              [36m</a>[39m
+            [36m</div>[39m
+          [36m</footer>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</body>[39m
+[36m</html>[39m
+ × __tests__/Login.test.jsx > Login Page > shows error message on login failure 9997ms
+   → Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ × __tests__/Login.test.jsx > Login Page > navigates to dashboard on successful login 2959ms
+   → expected "spy" to be called with arguments: [ '/dashboard', { replace: true } ]
+
+Number of calls: 0
+
+
+Ignored nodes: comments, script, style
+[36m<html>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col min-h-screen relative overflow-x-hidden bg-background"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"fixed inset-0 grid-pattern pointer-events-none"[39m
+          [36m/>[39m
+          [36m<header[39m
+            [33mclass[39m=[32m"z-20 flex justify-between items-center px-6 py-6 w-full bg-transparent"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"font-display text-2xl font-bold uppercase tracking-tighter text-primary border-b-4 border-primary-fixed"[39m
+            [36m>[39m
+              [0mOppex Portal[0m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex gap-4 items-center"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"text-on-surface hover:text-secondary transition-colors"[39m
+              [36m>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"material-symbols-outlined text-3xl"[39m
+                [36m>[39m
+                  [0mhelp_outline[0m
+                [36m</span>[39m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</header>[39m
+          [36m<main[39m
+            [33mclass[39m=[32m"flex-grow z-10 flex items-center justify-center px-6 py-12"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"bauhaus-card w-full max-w-[440px] p-8 md:p-10 relative "[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"absolute -top-6 -right-6 w-12 h-12 bg-secondary border-4 border-primary"[39m
+              [36m/>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"absolute -bottom-6 -left-6 w-12 h-12 bg-tertiary rounded-full border-4 border-primary"[39m
+              [36m/>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"mb-10"[39m
+              [36m>[39m
+                [36m<h1[39m
+                  [33mclass[39m=[32m"font-display text-4xl font-bold uppercase tracking-tight text-on-surface mb-2"[39m
+                [36m>[39m
+                  [0mLogin[0m
+                [36m</h1>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"h-1.5 w-16 bg-primary-fixed mb-4"[39m
+                [36m/>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"font-body text-on-surface-variant"[39m
+                [36m>[39m
+                  [0mAccess the secure environment.[0m
+                [36m</p>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"mb-6 flex justify-center"[39m
+              [36m>[39m
+                [36m<button>[39m
+                  [0mSign in with Google[0m
+                [36m</button>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"flex items-center mb-6 before:flex-1 before:border-t-2 before:border-primary/10 after:flex-1 after:border-t-2 after:border-primary/10"[39m
+              [36m>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"text-center font-label text-xs uppercase tracking-widest text-on-surface-variant mx-4"[39m
+                [36m>[39m
+                  [0mOr Login With Email[0m
+                [36m</p>[39m
+              [36m</div>[39m
+              [36m<form[39m
+                [33mclass[39m=[32m"space-y-8"[39m
+                [33mid[39m=[32m"login-form"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"space-y-2"[39m
+                [36m>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"font-label text-xs font-bold text-on-surface uppercase tracking-widest block"[39m
+                    [33mfor[39m=[32m"email"[39m
+                  [36m>[39m
+                    [0mUser Email[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"w-full bauhaus-input px-4 py-3 text-on-surface placeholder-outline-variant focus:outline-none"[39m
+                    [33mid[39m=[32m"email"[39m
+                    [33mplaceholder[39m=[32m"NAME@COMPANY.COM"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mtype[39m=[32m"email"[39m
+                    [33mvalue[39m=[32m"test@oppex.dev"[39m
+                  [36m/>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"space-y-2"[39m
+                [36m>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"flex justify-between items-center"[39m
+                  [36m>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"font-label text-xs font-bold text-on-surface uppercase tracking-widest block"[39m
+                      [33mfor[39m=[32m"password"[39m
+                    [36m>[39m
+                      [0mPassword[0m
+                    [36m</label>[39m
+                    [36m<a[39m
+                      [33mclass[39m=[32m"text-secondary text-xs font-bold uppercase hover:underline"[39m
+                      [33mdata-discover[39m=[32m"true"[39m
+                      [33mhref[39m=[32m"/forgot-password"[39m
+                    [36m>[39m
+                      [0mReset[0m
+                    [36m</a>[39m
+                  [36m</div>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"relative"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mclass[39m=[32m"w-full bauhaus-input px-4 py-3 pr-12 text-on-surface placeholder-outline-variant focus:outline-none"[39m
+                      [33mid[39m=[32m"password"[39m
+                      [33mplaceholder[39m=[32m"••••••••"[39m
+                      [33mrequired[39m=[32m""[39m
+                      [33mtype[39m=[32m"password"[39m
+                      [33mvalue[39m=[32m"password123"[39m
+                    [36m/>[39m
+                    [36m<button[39m
+                      [33mclass[39m=[32m"absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary transition-colors"[39m
+                      [33mtabindex[39m=[32m"-1"[39m
+                      [33mtype[39m=[32m"button"[39m
+                    [36m>[39m
+                      [36m<span[39m
+                        [33mclass[39m=[32m"material-symbols-outlined text-[20px]"[39m
+                      [36m>[39m
+                        [0mvisibility[0m
+                      [36m</span>[39m
+                    [36m</button>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"w-full bg-primary-fixed bauhaus-button text-on-primary-container font-bold uppercase tracking-widest py-5 flex justify-center items-center gap-3"[39m
+                  [33mid[39m=[32m"submit-btn"[39m
+                  [33mtype[39m=[32m"submit"[39m
+                [36m>[39m
+                  [36m<span>[39m
+                    [0mAuthenticate[0m
+                  [36m</span>[39m
+                [36m</button>[39m
+              [36m</form>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"mt-10 pt-8 border-t-2 border-primary/10"[39m
+              [36m>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"font-body text-sm font-medium text-center"[39m
+                [36m>[39m
+                  [0mNew user?[0m
+                  [36m<a[39m
+                    [33mclass[39m=[32m"text-secondary font-bold uppercase hover:underline ml-1"[39m
+                    [33mdata-discover[39m=[32m"true"[39m
+                    [33mhref[39m=[32m"/signup"[39m
+                  [36m>[39m
+                    [0mCreate Account[0m
+                  [36m</a>[39m
+                [36m</p>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</main>[39m
+          [36m<footer[39m
+            [33mclass[39m=[32m"z-20 flex flex-col md:flex-row justify-between items-center gap-6 px-10 py-10 w-full bg-primary text-on-primary"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"font-label text-xs font-bold uppercase tracking-widest"[39m
+            [36m/>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex gap-8"[39m
+            [36m>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+                [33mhref[39m=[32m"#"[39m
+              [36m>[39m
+                [0mPrivacy[0m
+              [36m</a>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+                [33mhref[39m=[32m"#"[39m
+              [36m>[39m
+                [0mTerms[0m
+              [36m</a>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+                [33mhref[39m=[32m"#"[39m
+              [36m>[39m
+                [0mSupport[0m
+              [36m</a>[39m
+            [36m</div>[39m
+          [36m</footer>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</body>[39m
+[36m</html>[39m
+ × __tests__/Login.test.jsx > Login Page > has a link to signup page 1084ms
+   → Unable to find an element with the text: /sign up/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col min-h-screen relative overflow-x-hidden bg-background"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"fixed inset-0 grid-pattern pointer-events-none"[39m
+        [36m/>[39m
+        [36m<header[39m
+          [33mclass[39m=[32m"z-20 flex justify-between items-center px-6 py-6 w-full bg-transparent"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"font-display text-2xl font-bold uppercase tracking-tighter text-primary border-b-4 border-primary-fixed"[39m
+          [36m>[39m
+            [0mOppex Portal[0m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex gap-4 items-center"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"text-on-surface hover:text-secondary transition-colors"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"material-symbols-outlined text-3xl"[39m
+              [36m>[39m
+                [0mhelp_outline[0m
+              [36m</span>[39m
+            [36m</button>[39m
+          [36m</div>[39m
+        [36m</header>[39m
+        [36m<main[39m
+          [33mclass[39m=[32m"flex-grow z-10 flex items-center justify-center px-6 py-12"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"bauhaus-card w-full max-w-[440px] p-8 md:p-10 relative "[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"absolute -top-6 -right-6 w-12 h-12 bg-secondary border-4 border-primary"[39m
+            [36m/>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"absolute -bottom-6 -left-6 w-12 h-12 bg-tertiary rounded-full border-4 border-primary"[39m
+            [36m/>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"mb-10"[39m
+            [36m>[39m
+              [36m<h1[39m
+                [33mclass[39m=[32m"font-display text-4xl font-bold uppercase tracking-tight text-on-surface mb-2"[39m
+              [36m>[39m
+                [0mLogin[0m
+              [36m</h1>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"h-1.5 w-16 bg-primary-fixed mb-4"[39m
+              [36m/>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"font-body text-on-surface-variant"[39m
+              [36m>[39m
+                [0mAccess the secure environment.[0m
+              [36m</p>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"mb-6 flex justify-center"[39m
+            [36m>[39m
+              [36m<button>[39m
+                [0mSign in with Google[0m
+              [36m</button>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex items-center mb-6 before:flex-1 before:border-t-2 before:border-primary/10 after:flex-1 after:border-t-2 after:border-primary/10"[39m
+            [36m>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"text-center font-label text-xs uppercase tracking-widest text-on-surface-variant mx-4"[39m
+              [36m>[39m
+                [0mOr Login With Email[0m
+              [36m</p>[39m
+            [36m</div>[39m
+            [36m<form[39m
+              [33mclass[39m=[32m"space-y-8"[39m
+              [33mid[39m=[32m"login-form"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"space-y-2"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"font-label text-xs font-bold text-on-surface uppercase tracking-widest block"[39m
+                  [33mfor[39m=[32m"email"[39m
+                [36m>[39m
+                  [0mUser Email[0m
+                [36m</label>[39m
+                [36m<input[39m
+                  [33mclass[39m=[32m"w-full bauhaus-input px-4 py-3 text-on-surface placeholder-outline-variant focus:outline-none"[39m
+                  [33mid[39m=[32m"email"[39m
+                  [33mplaceholder[39m=[32m"NAME@COMPANY.COM"[39m
+                  [33mrequired[39m=[32m""[39m
+                  [33mtype[39m=[32m"email"[39m
+                  [33mvalue[39m=[32m""[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"space-y-2"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"flex justify-between items-center"[39m
+                [36m>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"font-label text-xs font-bold text-on-surface uppercase tracking-widest block"[39m
+                    [33mfor[39m=[32m"password"[39m
+                  [36m>[39m
+                    [0mPassword[0m
+                  [36m</label>[39m
+                  [36m<a[39m
+                    [33mclass[39m=[32m"text-secondary text-xs font-bold uppercase hover:underline"[39m
+                    [33mdata-discover[39m=[32m"true"[39m
+                    [33mhref[39m=[32m"/forgot-password"[39m
+                  [36m>[39m
+                    [0mReset[0m
+                  [36m</a>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"relative"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"w-full bauhaus-input px-4 py-3 pr-12 text-on-surface placeholder-outline-variant focus:outline-none"[39m
+                    [33mid[39m=[32m"password"[39m
+                    [33mplaceholder[39m=[32m"••••••••"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mtype[39m=[32m"password"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary transition-colors"[39m
+                    [33mtabindex[39m=[32m"-1"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"material-symbols-outlined text-[20px]"[39m
+                    [36m>[39m
+                      [0mvisibility[0m
+                    [36m</span>[39m
+                  [36m</button>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"w-full bg-primary-fixed bauhaus-button text-on-primary-container font-bold uppercase tracking-widest py-5 flex justify-center items-center gap-3"[39m
+                [33mid[39m=[32m"submit-btn"[39m
+                [33mtype[39m=[32m"submit"[39m
+              [36m>[39m
+                [36m<span>[39m
+                  [0mAuthenticate[0m
+                [36m</span>[39m
+              [36m</button>[39m
+            [36m</form>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"mt-10 pt-8 border-t-2 border-primary/10"[39m
+            [36m>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"font-body text-sm font-medium text-center"[39m
+              [36m>[39m
+                [0mNew user?[0m
+                [36m<a[39m
+                  [33mclass[39m=[32m"text-secondary font-bold uppercase hover:underline ml-1"[39m
+                  [33mdata-discover[39m=[32m"true"[39m
+                  [33mhref[39m=[32m"/signup"[39m
+                [36m>[39m
+                  [0mCreate Account[0m
+                [36m</a>[39m
+              [36m</p>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</main>[39m
+        [36m<footer[39m
+          [33mclass[39m=[32m"z-20 flex flex-col md:flex-row justify-between items-center gap-6 px-10 py-10 w-full bg-primary text-on-primary"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"font-label text-xs font-bold uppercase tracking-widest"[39m
+          [36m/>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex gap-8"[39m
+          [36m>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+              [33mhref[39m=[32m"#"[39m
+            [36m>[39m
+              [0mPrivacy[0m
+            [36m</a>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+              [33mhref[39m=[32m"#"[39m
+            [36m>[39m
+              [0mTerms[0m
+            [36m</a>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+              [33mhref[39m=[32m"#"[39m
+            [36m>[39m
+              [0mSupport[0m
+            [36m</a>[39m
+          [36m</div>[39m
+        [36m</footer>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<html>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col min-h-screen relative overflow-x-hidden bg-background"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"fixed inset-0 grid-pattern pointer-events-none"[39m
+          [36m/>[39m
+          [36m<header[39m
+            [33mclass[39m=[32m"z-20 flex justify-between items-center px-6 py-6 w-full bg-transparent"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"font-display text-2xl font-bold uppercase tracking-tighter text-primary border-b-4 border-primary-fixed"[39m
+            [36m>[39m
+              [0mOppex Portal[0m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex gap-4 items-center"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"text-on-surface hover:text-secondary transition-colors"[39m
+              [36m>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"material-symbols-outlined text-3xl"[39m
+                [36m>[39m
+                  [0mhelp_outline[0m
+                [36m</span>[39m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</header>[39m
+          [36m<main[39m
+            [33mclass[39m=[32m"flex-grow z-10 flex items-center justify-center px-6 py-12"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"bauhaus-card w-full max-w-[440px] p-8 md:p-10 relative "[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"absolute -top-6 -right-6 w-12 h-12 bg-secondary border-4 border-primary"[39m
+              [36m/>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"absolute -bottom-6 -left-6 w-12 h-12 bg-tertiary rounded-full border-4 border-primary"[39m
+              [36m/>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"mb-10"[39m
+              [36m>[39m
+                [36m<h1[39m
+                  [33mclass[39m=[32m"font-display text-4xl font-bold uppercase tracking-tight text-on-surface mb-2"[39m
+                [36m>[39m
+                  [0mLogin[0m
+                [36m</h1>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"h-1.5 w-16 bg-primary-fixed mb-4"[39m
+                [36m/>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"font-body text-on-surface-variant"[39m
+                [36m>[39m
+                  [0mAccess the secure environment.[0m
+                [36m</p>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"mb-6 flex justify-center"[39m
+              [36m>[39m
+                [36m<button>[39m
+                  [0mSign in with Google[0m
+                [36m</button>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"flex items-center mb-6 before:flex-1 before:border-t-2 before:border-primary/10 after:flex-1 after:border-t-2 after:border-primary/10"[39m
+              [36m>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"text-center font-label text-xs uppercase tracking-widest text-on-surface-variant mx-4"[39m
+                [36m>[39m
+                  [0mOr Login With Email[0m
+                [36m</p>[39m
+              [36m</div>[39m
+              [36m<form[39m
+                [33mclass[39m=[32m"space-y-8"[39m
+                [33mid[39m=[32m"login-form"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"space-y-2"[39m
+                [36m>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"font-label text-xs font-bold text-on-surface uppercase tracking-widest block"[39m
+                    [33mfor[39m=[32m"email"[39m
+                  [36m>[39m
+                    [0mUser Email[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"w-full bauhaus-input px-4 py-3 text-on-surface placeholder-outline-variant focus:outline-none"[39m
+                    [33mid[39m=[32m"email"[39m
+                    [33mplaceholder[39m=[32m"NAME@COMPANY.COM"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mtype[39m=[32m"email"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"space-y-2"[39m
+                [36m>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"flex justify-between items-center"[39m
+                  [36m>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"font-label text-xs font-bold text-on-surface uppercase tracking-widest block"[39m
+                      [33mfor[39m=[32m"password"[39m
+                    [36m>[39m
+                      [0mPassword[0m
+                    [36m</label>[39m
+                    [36m<a[39m
+                      [33mclass[39m=[32m"text-secondary text-xs font-bold uppercase hover:underline"[39m
+                      [33mdata-discover[39m=[32m"true"[39m
+                      [33mhref[39m=[32m"/forgot-password"[39m
+                    [36m>[39m
+                      [0mReset[0m
+                    [36m</a>[39m
+                  [36m</div>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"relative"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mclass[39m=[32m"w-full bauhaus-input px-4 py-3 pr-12 text-on-surface placeholder-outline-variant focus:outline-none"[39m
+                      [33mid[39m=[32m"password"[39m
+                      [33mplaceholder[39m=[32m"••••••••"[39m
+                      [33mrequired[39m=[32m""[39m
+                      [33mtype[39m=[32m"password"[39m
+                      [33mvalue[39m=[32m""[39m
+                    [36m/>[39m
+                    [36m<button[39m
+                      [33mclass[39m=[32m"absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary transition-colors"[39m
+                      [33mtabindex[39m=[32m"-1"[39m
+                      [33mtype[39m=[32m"button"[39m
+                    [36m>[39m
+                      [36m<span[39m
+                        [33mclass[39m=[32m"material-symbols-outlined text-[20px]"[39m
+                      [36m>[39m
+                        [0mvisibility[0m
+                      [36m</span>[39m
+                    [36m</button>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"w-full bg-primary-fixed bauhaus-button text-on-primary-container font-bold uppercase tracking-widest py-5 flex justify-center items-center gap-3"[39m
+                  [33mid[39m=[32m"submit-btn"[39m
+                  [33mtype[39m=[32m"submit"[39m
+                [36m>[39m
+                  [36m<span>[39m
+                    [0mAuthenticate[0m
+                  [36m</span>[39m
+                [36m</button>[39m
+              [36m</form>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"mt-10 pt-8 border-t-2 border-primary/10"[39m
+              [36m>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"font-body text-sm font-medium text-center"[39m
+                [36m>[39m
+                  [0mNew user?[0m
+                  [36m<a[39m
+                    [33mclass[39m=[32m"text-secondary font-bold uppercase hover:underline ml-1"[39m
+                    [33mdata-discover[39m=[32m"true"[39m
+                    [33mhref[39m=[32m"/signup"[39m
+                  [36m>[39m
+                    [0mCreate Account[0m
+                  [36m</a>[39m
+                [36m</p>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</main>[39m
+          [36m<footer[39m
+            [33mclass[39m=[32m"z-20 flex flex-col md:flex-row justify-between items-center gap-6 px-10 py-10 w-full bg-primary text-on-primary"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"font-label text-xs font-bold uppercase tracking-widest"[39m
+            [36m/>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex gap-8"[39m
+            [36m>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+                [33mhref[39m=[32m"#"[39m
+              [36m>[39m
+                [0mPrivacy[0m
+              [36m</a>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+                [33mhref[39m=[32m"#"[39m
+              [36m>[39m
+                [0mTerms[0m
+              [36m</a>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+                [33mhref[39m=[32m"#"[39m
+              [36m>[39m
+                [0mSupport[0m
+              [36m</a>[39m
+            [36m</div>[39m
+          [36m</footer>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</body>[39m
+[36m</html>[39m
+ ✓ __tests__/Dashboard.test.jsx > Dashboard Page > shows unverified message when email is not verified 79ms
+ ✓ __tests__/Dashboard.test.jsx > Dashboard Page > shows verified message when email is verified 48ms
+ ✓ __tests__/Dashboard.test.jsx > Dashboard Page > displays user email 47ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 8 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  __tests__/Login.test.jsx > Login Page > renders login form with email and password fields
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ __tests__/Login.test.jsx:51:3
+     49|   });
+     50| 
+     51|   it('renders login form with email and password fields', async () => {
+       |   ^
+     52|     renderLogin();
+     53| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/8]⎯
+
+ FAIL  __tests__/Login.test.jsx > Login Page > shows error message on login failure
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ __tests__/Login.test.jsx:61:3
+     59|   });
+     60| 
+     61|   it('shows error message on login failure', async () => {
+       |   ^
+     62|     renderLogin();
+     63| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/8]⎯
+
+ FAIL  __tests__/Login.test.jsx > Login Page > navigates to dashboard on successful login
+AssertionError: expected "spy" to be called with arguments: [ '/dashboard', { replace: true } ]
+
+Number of calls: 0
+
+
+Ignored nodes: comments, script, style
+[36m<html>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col min-h-screen relative overflow-x-hidden bg-background"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"fixed inset-0 grid-pattern pointer-events-none"[39m
+          [36m/>[39m
+          [36m<header[39m
+            [33mclass[39m=[32m"z-20 flex justify-between items-center px-6 py-6 w-full bg-transparent"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"font-display text-2xl font-bold uppercase tracking-tighter text-primary border-b-4 border-primary-fixed"[39m
+            [36m>[39m
+              [0mOppex Portal[0m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex gap-4 items-center"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"text-on-surface hover:text-secondary transition-colors"[39m
+              [36m>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"material-symbols-outlined text-3xl"[39m
+                [36m>[39m
+                  [0mhelp_outline[0m
+                [36m</span>[39m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</header>[39m
+          [36m<main[39m
+            [33mclass[39m=[32m"flex-grow z-10 flex items-center justify-center px-6 py-12"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"bauhaus-card w-full max-w-[440px] p-8 md:p-10 relative "[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"absolute -top-6 -right-6 w-12 h-12 bg-secondary border-4 border-primary"[39m
+              [36m/>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"absolute -bottom-6 -left-6 w-12 h-12 bg-tertiary rounded-full border-4 border-primary"[39m
+              [36m/>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"mb-10"[39m
+              [36m>[39m
+                [36m<h1[39m
+                  [33mclass[39m=[32m"font-display text-4xl font-bold uppercase tracking-tight text-on-surface mb-2"[39m
+                [36m>[39m
+                  [0mLogin[0m
+                [36m</h1>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"h-1.5 w-16 bg-primary-fixed mb-4"[39m
+                [36m/>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"font-body text-on-surface-variant"[39m
+                [36m>[39m
+                  [0mAccess the secure environment.[0m
+                [36m</p>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"mb-6 flex justify-center"[39m
+              [36m>[39m
+                [36m<button>[39m
+                  [0mSign in with Google[0m
+                [36m</button>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"flex items-center mb-6 before:flex-1 before:border-t-2 before:border-primary/10 after:flex-1 after:border-t-2 after:border-primary/10"[39m
+              [36m>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"text-center font-label text-xs uppercase tracking-widest text-on-surface-variant mx-4"[39m
+                [36m>[39m
+                  [0mOr Login With Email[0m
+                [36m</p>[39m
+              [36m</div>[39m
+              [36m<form[39m
+                [33mclass[39m=[32m"space-y-8"[39m
+                [33mid[39m=[32m"login-form"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"space-y-2"[39m
+                [36m>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"font-label text-xs font-bold text-on-surface uppercase tracking-widest block"[39m
+                    [33mfor[39m=[32m"email"[39m
+                  [36m>[39m
+                    [0mUser Email[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"w-full bauhaus-input px-4 py-3 text-on-surface placeholder-outline-variant focus:outline-none"[39m
+                    [33mid[39m=[32m"email"[39m
+                    [33mplaceholder[39m=[32m"NAME@COMPANY.COM"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mtype[39m=[32m"email"[39m
+                    [33mvalue[39m=[32m"test@oppex.dev"[39m
+                  [36m/>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"space-y-2"[39m
+                [36m>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"flex justify-between items-center"[39m
+                  [36m>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"font-label text-xs font-bold text-on-surface uppercase tracking-widest block"[39m
+                      [33mfor[39m=[32m"password"[39m
+                    [36m>[39m
+                      [0mPassword[0m
+                    [36m</label>[39m
+                    [36m<a[39m
+                      [33mclass[39m=[32m"text-secondary text-xs font-bold uppercase hover:underline"[39m
+                      [33mdata-discover[39m=[32m"true"[39m
+                      [33mhref[39m=[32m"/forgot-password"[39m
+                    [36m>[39m
+                      [0mReset[0m
+                    [36m</a>[39m
+                  [36m</div>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"relative"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mclass[39m=[32m"w-full bauhaus-input px-4 py-3 pr-12 text-on-surface placeholder-outline-variant focus:outline-none"[39m
+                      [33mid[39m=[32m"password"[39m
+                      [33mplaceholder[39m=[32m"••••••••"[39m
+                      [33mrequired[39m=[32m""[39m
+                      [33mtype[39m=[32m"password"[39m
+                      [33mvalue[39m=[32m"password123"[39m
+                    [36m/>[39m
+                    [36m<button[39m
+                      [33mclass[39m=[32m"absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary transition-colors"[39m
+                      [33mtabindex[39m=[32m"-1"[39m
+                      [33mtype[39m=[32m"button"[39m
+                    [36m>[39m
+                      [36m<span[39m
+                        [33mclass[39m=[32m"material-symbols-outlined text-[20px]"[39m
+                      [36m>[39m
+                        [0mvisibility[0m
+                      [36m</span>[39m
+                    [36m</button>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"w-full bg-primary-fixed bauhaus-button text-on-primary-container font-bold uppercase tracking-widest py-5 flex justify-center items-center gap-3"[39m
+                  [33mid[39m=[32m"submit-btn"[39m
+                  [33mtype[39m=[32m"submit"[39m
+                [36m>[39m
+                  [36m<span>[39m
+                    [0mAuthenticate[0m
+                  [36m</span>[39m
+                [36m</button>[39m
+              [36m</form>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"mt-10 pt-8 border-t-2 border-primary/10"[39m
+              [36m>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"font-body text-sm font-medium text-center"[39m
+                [36m>[39m
+                  [0mNew user?[0m
+                  [36m<a[39m
+                    [33mclass[39m=[32m"text-secondary font-bold uppercase hover:underline ml-1"[39m
+                    [33mdata-discover[39m=[32m"true"[39m
+                    [33mhref[39m=[32m"/signup"[39m
+                  [36m>[39m
+                    [0mCreate Account[0m
+                  [36m</a>[39m
+                [36m</p>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</main>[39m
+          [36m<footer[39m
+            [33mclass[39m=[32m"z-20 flex flex-col md:flex-row justify-between items-center gap-6 px-10 py-10 w-full bg-primary text-on-primary"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"font-label text-xs font-bold uppercase tracking-widest"[39m
+            [36m/>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex gap-8"[39m
+            [36m>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+                [33mhref[39m=[32m"#"[39m
+              [36m>[39m
+                [0mPrivacy[0m
+              [36m</a>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+                [33mhref[39m=[32m"#"[39m
+              [36m>[39m
+                [0mTerms[0m
+              [36m</a>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+                [33mhref[39m=[32m"#"[39m
+              [36m>[39m
+                [0mSupport[0m
+              [36m</a>[39m
+            [36m</div>[39m
+          [36m</footer>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</body>[39m
+[36m</html>[39m
+ ❯ __tests__/Login.test.jsx:105:28
+    103| 
+    104|     await waitFor(() => {
+    105|       expect(mockNavigate).toHaveBeenCalledWith('/dashboard', { replac…
+       |                            ^
+    106|     });
+    107|   });
+ ❯ runWithExpensiveErrorDiagnosticsDisabled node_modules/@testing-library/dom/dist/config.js:47:12
+ ❯ checkCallback node_modules/@testing-library/dom/dist/wait-for.js:124:77
+ ❯ Timeout.checkRealTimersCallback node_modules/@testing-library/dom/dist/wait-for.js:118:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/8]⎯
+
+ FAIL  __tests__/Login.test.jsx > Login Page > has a link to signup page
+TestingLibraryElementError: Unable to find an element with the text: /sign up/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col min-h-screen relative overflow-x-hidden bg-background"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"fixed inset-0 grid-pattern pointer-events-none"[39m
+        [36m/>[39m
+        [36m<header[39m
+          [33mclass[39m=[32m"z-20 flex justify-between items-center px-6 py-6 w-full bg-transparent"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"font-display text-2xl font-bold uppercase tracking-tighter text-primary border-b-4 border-primary-fixed"[39m
+          [36m>[39m
+            [0mOppex Portal[0m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex gap-4 items-center"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"text-on-surface hover:text-secondary transition-colors"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"material-symbols-outlined text-3xl"[39m
+              [36m>[39m
+                [0mhelp_outline[0m
+              [36m</span>[39m
+            [36m</button>[39m
+          [36m</div>[39m
+        [36m</header>[39m
+        [36m<main[39m
+          [33mclass[39m=[32m"flex-grow z-10 flex items-center justify-center px-6 py-12"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"bauhaus-card w-full max-w-[440px] p-8 md:p-10 relative "[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"absolute -top-6 -right-6 w-12 h-12 bg-secondary border-4 border-primary"[39m
+            [36m/>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"absolute -bottom-6 -left-6 w-12 h-12 bg-tertiary rounded-full border-4 border-primary"[39m
+            [36m/>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"mb-10"[39m
+            [36m>[39m
+              [36m<h1[39m
+                [33mclass[39m=[32m"font-display text-4xl font-bold uppercase tracking-tight text-on-surface mb-2"[39m
+              [36m>[39m
+                [0mLogin[0m
+              [36m</h1>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"h-1.5 w-16 bg-primary-fixed mb-4"[39m
+              [36m/>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"font-body text-on-surface-variant"[39m
+              [36m>[39m
+                [0mAccess the secure environment.[0m
+              [36m</p>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"mb-6 flex justify-center"[39m
+            [36m>[39m
+              [36m<button>[39m
+                [0mSign in with Google[0m
+              [36m</button>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex items-center mb-6 before:flex-1 before:border-t-2 before:border-primary/10 after:flex-1 after:border-t-2 after:border-primary/10"[39m
+            [36m>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"text-center font-label text-xs uppercase tracking-widest text-on-surface-variant mx-4"[39m
+              [36m>[39m
+                [0mOr Login With Email[0m
+              [36m</p>[39m
+            [36m</div>[39m
+            [36m<form[39m
+              [33mclass[39m=[32m"space-y-8"[39m
+              [33mid[39m=[32m"login-form"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"space-y-2"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"font-label text-xs font-bold text-on-surface uppercase tracking-widest block"[39m
+                  [33mfor[39m=[32m"email"[39m
+                [36m>[39m
+                  [0mUser Email[0m
+                [36m</label>[39m
+                [36m<input[39m
+                  [33mclass[39m=[32m"w-full bauhaus-input px-4 py-3 text-on-surface placeholder-outline-variant focus:outline-none"[39m
+                  [33mid[39m=[32m"email"[39m
+                  [33mplaceholder[39m=[32m"NAME@COMPANY.COM"[39m
+                  [33mrequired[39m=[32m""[39m
+                  [33mtype[39m=[32m"email"[39m
+                  [33mvalue[39m=[32m""[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"space-y-2"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"flex justify-between items-center"[39m
+                [36m>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"font-label text-xs font-bold text-on-surface uppercase tracking-widest block"[39m
+                    [33mfor[39m=[32m"password"[39m
+                  [36m>[39m
+                    [0mPassword[0m
+                  [36m</label>[39m
+                  [36m<a[39m
+                    [33mclass[39m=[32m"text-secondary text-xs font-bold uppercase hover:underline"[39m
+                    [33mdata-discover[39m=[32m"true"[39m
+                    [33mhref[39m=[32m"/forgot-password"[39m
+                  [36m>[39m
+                    [0mReset[0m
+                  [36m</a>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"relative"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"w-full bauhaus-input px-4 py-3 pr-12 text-on-surface placeholder-outline-variant focus:outline-none"[39m
+                    [33mid[39m=[32m"password"[39m
+                    [33mplaceholder[39m=[32m"••••••••"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mtype[39m=[32m"password"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary transition-colors"[39m
+                    [33mtabindex[39m=[32m"-1"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"material-symbols-outlined text-[20px]"[39m
+                    [36m>[39m
+                      [0mvisibility[0m
+                    [36m</span>[39m
+                  [36m</button>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"w-full bg-primary-fixed bauhaus-button text-on-primary-container font-bold uppercase tracking-widest py-5 flex justify-center items-center gap-3"[39m
+                [33mid[39m=[32m"submit-btn"[39m
+                [33mtype[39m=[32m"submit"[39m
+              [36m>[39m
+                [36m<span>[39m
+                  [0mAuthenticate[0m
+                [36m</span>[39m
+              [36m</button>[39m
+            [36m</form>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"mt-10 pt-8 border-t-2 border-primary/10"[39m
+            [36m>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"font-body text-sm font-medium text-center"[39m
+              [36m>[39m
+                [0mNew user?[0m
+                [36m<a[39m
+                  [33mclass[39m=[32m"text-secondary font-bold uppercase hover:underline ml-1"[39m
+                  [33mdata-discover[39m=[32m"true"[39m
+                  [33mhref[39m=[32m"/signup"[39m
+                [36m>[39m
+                  [0mCreate Account[0m
+                [36m</a>[39m
+              [36m</p>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</main>[39m
+        [36m<footer[39m
+          [33mclass[39m=[32m"z-20 flex flex-col md:flex-row justify-between items-center gap-6 px-10 py-10 w-full bg-primary text-on-primary"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"font-label text-xs font-bold uppercase tracking-widest"[39m
+          [36m/>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex gap-8"[39m
+          [36m>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+              [33mhref[39m=[32m"#"[39m
+            [36m>[39m
+              [0mPrivacy[0m
+            [36m</a>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+              [33mhref[39m=[32m"#"[39m
+            [36m>[39m
+              [0mTerms[0m
+            [36m</a>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+              [33mhref[39m=[32m"#"[39m
+            [36m>[39m
+              [0mSupport[0m
+            [36m</a>[39m
+          [36m</div>[39m
+        [36m</footer>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<html>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col min-h-screen relative overflow-x-hidden bg-background"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"fixed inset-0 grid-pattern pointer-events-none"[39m
+          [36m/>[39m
+          [36m<header[39m
+            [33mclass[39m=[32m"z-20 flex justify-between items-center px-6 py-6 w-full bg-transparent"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"font-display text-2xl font-bold uppercase tracking-tighter text-primary border-b-4 border-primary-fixed"[39m
+            [36m>[39m
+              [0mOppex Portal[0m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex gap-4 items-center"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"text-on-surface hover:text-secondary transition-colors"[39m
+              [36m>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"material-symbols-outlined text-3xl"[39m
+                [36m>[39m
+                  [0mhelp_outline[0m
+                [36m</span>[39m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</header>[39m
+          [36m<main[39m
+            [33mclass[39m=[32m"flex-grow z-10 flex items-center justify-center px-6 py-12"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"bauhaus-card w-full max-w-[440px] p-8 md:p-10 relative "[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"absolute -top-6 -right-6 w-12 h-12 bg-secondary border-4 border-primary"[39m
+              [36m/>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"absolute -bottom-6 -left-6 w-12 h-12 bg-tertiary rounded-full border-4 border-primary"[39m
+              [36m/>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"mb-10"[39m
+              [36m>[39m
+                [36m<h1[39m
+                  [33mclass[39m=[32m"font-display text-4xl font-bold uppercase tracking-tight text-on-surface mb-2"[39m
+                [36m>[39m
+                  [0mLogin[0m
+                [36m</h1>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"h-1.5 w-16 bg-primary-fixed mb-4"[39m
+                [36m/>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"font-body text-on-surface-variant"[39m
+                [36m>[39m
+                  [0mAccess the secure environment.[0m
+                [36m</p>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"mb-6 flex justify-center"[39m
+              [36m>[39m
+                [36m<button>[39m
+                  [0mSign in with Google[0m
+                [36m</button>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"flex items-center mb-6 before:flex-1 before:border-t-2 before:border-primary/10 after:flex-1 after:border-t-2 after:border-primary/10"[39m
+              [36m>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"text-center font-label text-xs uppercase tracking-widest text-on-surface-variant mx-4"[39m
+                [36m>[39m
+                  [0mOr Login With Email[0m
+                [36m</p>[39m
+              [36m</div>[39m
+              [36m<form[39m
+                [33mclass[39m=[32m"space-y-8"[39m
+                [33mid[39m=[32m"login-form"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"space-y-2"[39m
+                [36m>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"font-label text-xs font-bold text-on-surface uppercase tracking-widest block"[39m
+                    [33mfor[39m=[32m"email"[39m
+                  [36m>[39m
+                    [0mUser Email[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"w-full bauhaus-input px-4 py-3 text-on-surface placeholder-outline-variant focus:outline-none"[39m
+                    [33mid[39m=[32m"email"[39m
+                    [33mplaceholder[39m=[32m"NAME@COMPANY.COM"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mtype[39m=[32m"email"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"space-y-2"[39m
+                [36m>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"flex justify-between items-center"[39m
+                  [36m>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"font-label text-xs font-bold text-on-surface uppercase tracking-widest block"[39m
+                      [33mfor[39m=[32m"password"[39m
+                    [36m>[39m
+                      [0mPassword[0m
+                    [36m</label>[39m
+                    [36m<a[39m
+                      [33mclass[39m=[32m"text-secondary text-xs font-bold uppercase hover:underline"[39m
+                      [33mdata-discover[39m=[32m"true"[39m
+                      [33mhref[39m=[32m"/forgot-password"[39m
+                    [36m>[39m
+                      [0mReset[0m
+                    [36m</a>[39m
+                  [36m</div>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"relative"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mclass[39m=[32m"w-full bauhaus-input px-4 py-3 pr-12 text-on-surface placeholder-outline-variant focus:outline-none"[39m
+                      [33mid[39m=[32m"password"[39m
+                      [33mplaceholder[39m=[32m"••••••••"[39m
+                      [33mrequired[39m=[32m""[39m
+                      [33mtype[39m=[32m"password"[39m
+                      [33mvalue[39m=[32m""[39m
+                    [36m/>[39m
+                    [36m<button[39m
+                      [33mclass[39m=[32m"absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary transition-colors"[39m
+                      [33mtabindex[39m=[32m"-1"[39m
+                      [33mtype[39m=[32m"button"[39m
+                    [36m>[39m
+                      [36m<span[39m
+                        [33mclass[39m=[32m"material-symbols-outlined text-[20px]"[39m
+                      [36m>[39m
+                        [0mvisibility[0m
+                      [36m</span>[39m
+                    [36m</button>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"w-full bg-primary-fixed bauhaus-button text-on-primary-container font-bold uppercase tracking-widest py-5 flex justify-center items-center gap-3"[39m
+                  [33mid[39m=[32m"submit-btn"[39m
+                  [33mtype[39m=[32m"submit"[39m
+                [36m>[39m
+                  [36m<span>[39m
+                    [0mAuthenticate[0m
+                  [36m</span>[39m
+                [36m</button>[39m
+              [36m</form>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"mt-10 pt-8 border-t-2 border-primary/10"[39m
+              [36m>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"font-body text-sm font-medium text-center"[39m
+                [36m>[39m
+                  [0mNew user?[0m
+                  [36m<a[39m
+                    [33mclass[39m=[32m"text-secondary font-bold uppercase hover:underline ml-1"[39m
+                    [33mdata-discover[39m=[32m"true"[39m
+                    [33mhref[39m=[32m"/signup"[39m
+                  [36m>[39m
+                    [0mCreate Account[0m
+                  [36m</a>[39m
+                [36m</p>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</main>[39m
+          [36m<footer[39m
+            [33mclass[39m=[32m"z-20 flex flex-col md:flex-row justify-between items-center gap-6 px-10 py-10 w-full bg-primary text-on-primary"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"font-label text-xs font-bold uppercase tracking-widest"[39m
+            [36m/>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex gap-8"[39m
+            [36m>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+                [33mhref[39m=[32m"#"[39m
+              [36m>[39m
+                [0mPrivacy[0m
+              [36m</a>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+                [33mhref[39m=[32m"#"[39m
+              [36m>[39m
+                [0mTerms[0m
+              [36m</a>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+                [33mhref[39m=[32m"#"[39m
+              [36m>[39m
+                [0mSupport[0m
+              [36m</a>[39m
+            [36m</div>[39m
+          [36m</footer>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</body>[39m
+[36m</html>[39m
+ ❯ Proxy.waitForWrapper node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ __tests__/Login.test.jsx:112:11
+    110|     renderLogin();
+    111| 
+    112|     await waitFor(() => {
+       |           ^
+    113|       expect(screen.getByText(/sign up/i)).toBeInTheDocument();
+    114|     });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/8]⎯
+
+ FAIL  __tests__/ProtectedRoute.test.jsx > ProtectedRoute > redirects to login when not authenticated
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ __tests__/ProtectedRoute.test.jsx:20:3
+     18|   });
+     19| 
+     20|   it('redirects to login when not authenticated', async () => {
+       |   ^
+     21|     client.get.mockRejectedValue({ response: { status: 401 } });
+     22| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/8]⎯
+
+ FAIL  __tests__/Signup.test.jsx > Signup Page > renders signup form with email and password fields
+TestingLibraryElementError: Found a label with the text of: /email/i, however no form control was found associated to that label. Make sure you're using the "for" attribute or "aria-labelledby" attribute correctly.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col min-h-screen relative overflow-x-hidden bg-background"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"fixed inset-0 grid-pattern pointer-events-none"[39m
+        [36m/>[39m
+        [36m<header[39m
+          [33mclass[39m=[32m"z-20 flex justify-between items-center px-6 py-6 w-full bg-transparent"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"font-display text-2xl font-bold uppercase tracking-tighter text-primary border-b-4 border-primary-fixed"[39m
+          [36m>[39m
+            [0mOppex Portal[0m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex gap-4 items-center"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"text-on-surface hover:text-secondary transition-colors"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"material-symbols-outlined text-3xl"[39m
+              [36m>[39m
+                [0mhelp_outline[0m
+              [36m</span>[39m
+            [36m</button>[39m
+          [36m</div>[39m
+        [36m</header>[39m
+        [36m<main[39m
+          [33mclass[39m=[32m"flex-grow z-10 flex items-center justify-center px-6 py-12"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"bauhaus-card w-full max-w-[440px] p-8 md:p-10 relative "[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"absolute -top-6 -right-6 w-12 h-12 bg-secondary border-4 border-primary"[39m
+            [36m/>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"absolute -bottom-6 -left-6 w-12 h-12 bg-tertiary rounded-full border-4 border-primary"[39m
+            [36m/>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"mb-10"[39m
+            [36m>[39m
+              [36m<h1[39m
+                [33mclass[39m=[32m"font-display text-4xl font-bold uppercase tracking-tight text-on-surface mb-2"[39m
+              [36m>[39m
+                [0mCreate Account[0m
+              [36m</h1>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"h-1.5 w-16 bg-primary-fixed mb-4"[39m
+              [36m/>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"font-body text-on-surface-variant"[39m
+              [36m>[39m
+                [0mJoin Oppex Portal today.[0m
+              [36m</p>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"mb-6 flex justify-center"[39m
+            [36m>[39m
+              [36m<button>[39m
+                [0mSign in with Google[0m
+              [36m</button>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex items-center mb-6 before:flex-1 before:border-t-2 before:border-primary/10 after:flex-1 after:border-t-2 after:border-primary/10"[39m
+            [36m>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"text-center font-label text-xs uppercase tracking-widest text-on-surface-variant mx-4"[39m
+              [36m>[39m
+                [0mOr Signup With Email[0m
+              [36m</p>[39m
+            [36m</div>[39m
+            [36m<form[39m
+              [33mclass[39m=[32m"space-y-8"[39m
+              [33mid[39m=[32m"signup-form"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"space-y-2"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"font-label text-xs font-bold text-on-surface uppercase tracking-widest block"[39m
+                  [33mfor[39m=[32m"email"[39m
+                [36m>[39m
+                  [0mUser Email[0m
+                [36m</label>[39m
+                [36m<input[39m
+                  [33mautocomplete[39m=[32m"email"[39m
+                  [33mclass[39m=[32m"w-full bauhaus-input px-4 py-3 text-on-surface placeholder-outline-variant focus:outline-none"[39m
+                  [33mid[39m=[32m"signup-email"[39m
+                  [33mplaceholder[39m=[32m"NAME@COMPANY.COM"[39m
+                  [33mrequired[39m=[32m""[39m
+                  [33mtype[39m=[32m"email"[39m
+                  [33mvalue[39m=[32m""[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"space-y-2"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"font-label text-xs font-bold text-on-surface uppercase tracking-widest block"[39m
+                  [33mfor[39m=[32m"password"[39m
+                [36m>[39m
+                  [0mPassword[0m
+                [36m</label>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"relative"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mautocomplete[39m=[32m"new-password"[39m
+                    [33mclass[39m=[32m"w-full bauhaus-input px-4 py-3 pr-12 text-on-surface placeholder-outline-variant focus:outline-none"[39m
+                    [33mid[39m=[32m"signup-password"[39m
+                    [33mminlength[39m=[32m"8"[39m
+                    [33mplaceholder[39m=[32m"AT LEAST 8 CHARACTERS"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mtype[39m=[32m"password"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary transition-colors"[39m
+                    [33mtabindex[39m=[32m"-1"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"material-symbols-outlined text-[20px]"[39m
+                    [36m>[39m
+                      [0mvisibility[0m
+                    [36m</span>[39m
+                  [36m</button>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"w-full bg-primary-fixed bauhaus-button text-on-primary-container font-bold uppercase tracking-widest py-5 flex justify-center items-center gap-3"[39m
+                [33mid[39m=[32m"signup-submit"[39m
+                [33mtype[39m=[32m"submit"[39m
+              [36m>[39m
+                [36m<span>[39m
+                  [0mCreate Account[0m
+                [36m</span>[39m
+              [36m</button>[39m
+            [36m</form>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"mt-10 pt-8 border-t-2 border-primary/10"[39m
+            [36m>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"font-body text-sm font-medium text-center"[39m
+              [36m>[39m
+                [0mAlready have an account?[0m
+                [36m<a[39m
+                  [33mclass[39m=[32m"text-secondary font-bold uppercase hover:underline ml-1"[39m
+                  [33mdata-discover[39m=[32m"true"[39m
+                  [33mhref[39m=[32m"/login"[39m
+                [36m>[39m
+                  [0mSign In[0m
+                [36m</a>[39m
+              [36m</p>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</main>[39m
+        [36m<footer[39m
+          [33mclass[39m=[32m"z-20 flex flex-col md:flex-row justify-between items-center gap-6 px-10 py-10 w-full bg-primary text-on-primary"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"font-label text-xs font-bold uppercase tracking-widest"[39m
+          [36m>[39m
+            [0m© 2024 Oppex Security Systems / Form Follows Function[0m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex gap-8"[39m
+          [36m>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+              [33mhref[39m=[32m"#"[39m
+            [36m>[39m
+              [0mPrivacy[0m
+            [36m</a>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+              [33mhref[39m=[32m"#"[39m
+            [36m>[39m
+              [0mTerms[0m
+            [36m</a>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+              [33mhref[39m=[32m"#"[39m
+            [36m>[39m
+              [0mSupport[0m
+            [36m</a>[39m
+          [36m</div>[39m
+        [36m</footer>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<html>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col min-h-screen relative overflow-x-hidden bg-background"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"fixed inset-0 grid-pattern pointer-events-none"[39m
+          [36m/>[39m
+          [36m<header[39m
+            [33mclass[39m=[32m"z-20 flex justify-between items-center px-6 py-6 w-full bg-transparent"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"font-display text-2xl font-bold uppercase tracking-tighter text-primary border-b-4 border-primary-fixed"[39m
+            [36m>[39m
+              [0mOppex Portal[0m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex gap-4 items-center"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"text-on-surface hover:text-secondary transition-colors"[39m
+              [36m>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"material-symbols-outlined text-3xl"[39m
+                [36m>[39m
+                  [0mhelp_outline[0m
+                [36m</span>[39m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</header>[39m
+          [36m<main[39m
+            [33mclass[39m=[32m"flex-grow z-10 flex items-center justify-center px-6 py-12"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"bauhaus-card w-full max-w-[440px] p-8 md:p-10 relative "[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"absolute -top-6 -right-6 w-12 h-12 bg-secondary border-4 border-primary"[39m
+              [36m/>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"absolute -bottom-6 -left-6 w-12 h-12 bg-tertiary rounded-full border-4 border-primary"[39m
+              [36m/>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"mb-10"[39m
+              [36m>[39m
+                [36m<h1[39m
+                  [33mclass[39m=[32m"font-display text-4xl font-bold uppercase tracking-tight text-on-surface mb-2"[39m
+                [36m>[39m
+                  [0mCreate Account[0m
+                [36m</h1>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"h-1.5 w-16 bg-primary-fixed mb-4"[39m
+                [36m/>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"font-body text-on-surface-variant"[39m
+                [36m>[39m
+                  [0mJoin Oppex Portal today.[0m
+                [36m</p>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"mb-6 flex justify-center"[39m
+              [36m>[39m
+                [36m<button>[39m
+                  [0mSign in with Google[0m
+                [36m</button>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"flex items-center mb-6 before:flex-1 before:border-t-2 before:border-primary/10 after:flex-1 after:border-t-2 after:border-primary/10"[39m
+              [36m>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"text-center font-label text-xs uppercase tracking-widest text-on-surface-variant mx-4"[39m
+                [36m>[39m
+                  [0mOr Signup With Email[0m
+                [36m</p>[39m
+              [36m</div>[39m
+              [36m<form[39m
+                [33mclass[39m=[32m"space-y-8"[39m
+                [33mid[39m=[32m"signup-form"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"space-y-2"[39m
+                [36m>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"font-label text-xs font-bold text-on-surface uppercase tracking-widest block"[39m
+                    [33mfor[39m=[32m"email"[39m
+                  [36m>[39m
+                    [0mUser Email[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mautocomplete[39m=[32m"email"[39m
+                    [33mclass[39m=[32m"w-full bauhaus-input px-4 py-3 text-on-surface placeholder-outline-variant focus:outline-none"[39m
+                    [33mid[39m=[32m"signup-email"[39m
+                    [33mplaceholder[39m=[32m"NAME@COMPANY.COM"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mtype[39m=[32m"email"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"space-y-2"[39m
+                [36m>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"font-label text-xs font-bold text-on-surface uppercase tracking-widest block"[39m
+                    [33mfor[39m=[32m"password"[39m
+                  [36m>[39m
+                    [0mPassword[0m
+                  [36m</label>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"relative"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mautocomplete[39m=[32m"new-password"[39m
+                      [33mclass[39m=[32m"w-full bauhaus-input px-4 py-3 pr-12 text-on-surface placeholder-outline-variant focus:outline-none"[39m
+                      [33mid[39m=[32m"signup-password"[39m
+                      [33mminlength[39m=[32m"8"[39m
+                      [33mplaceholder[39m=[32m"AT LEAST 8 CHARACTERS"[39m
+                      [33mrequired[39m=[32m""[39m
+                      [33mtype[39m=[32m"password"[39m
+                      [33mvalue[39m=[32m""[39m
+                    [36m/>[39m
+                    [36m<button[39m
+                      [33mclass[39m=[32m"absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary transition-colors"[39m
+                      [33mtabindex[39m=[32m"-1"[39m
+                      [33mtype[39m=[32m"button"[39m
+                    [36m>[39m
+                      [36m<span[39m
+                        [33mclass[39m=[32m"material-symbols-outlined text-[20px]"[39m
+                      [36m>[39m
+                        [0mvisibility[0m
+                      [36m</span>[39m
+                    [36m</button>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"w-full bg-primary-fixed bauhaus-button text-on-primary-container font-bold uppercase tracking-widest py-5 flex justify-center items-center gap-3"[39m
+                  [33mid[39m=[32m"signup-submit"[39m
+                  [33mtype[39m=[32m"submit"[39m
+                [36m>[39m
+                  [36m<span>[39m
+                    [0mCreate Account[0m
+                  [36m</span>[39m
+                [36m</button>[39m
+              [36m</form>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"mt-10 pt-8 border-t-2 border-primary/10"[39m
+              [36m>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"font-body text-sm font-medium text-center"[39m
+                [36m>[39m
+                  [0mAlready have an account?[0m
+                  [36m<a[39m
+                    [33mclass[39m=[32m"text-secondary font-bold uppercase hover:underline ml-1"[39m
+                    [33mdata-discover[39m=[32m"true"[39m
+                    [33mhref[39m=[32m"/login"[39m
+                  [36m>[39m
+                    [0mSign In[0m
+                  [36m</a>[39m
+                [36m</p>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</main>[39m
+          [36m<footer[39m
+            [33mclass[39m=[32m"z-20 flex flex-col md:flex-row justify-between items-center gap-6 px-10 py-10 w-full bg-primary text-on-primary"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"font-label text-xs font-bold uppercase tracking-widest"[39m
+            [36m>[39m
+              [0m© 2024 Oppex Security Systems / Form Follows Function[0m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex gap-8"[39m
+            [36m>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+                [33mhref[39m=[32m"#"[39m
+              [36m>[39m
+                [0mPrivacy[0m
+              [36m</a>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+                [33mhref[39m=[32m"#"[39m
+              [36m>[39m
+                [0mTerms[0m
+              [36m</a>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+                [33mhref[39m=[32m"#"[39m
+              [36m>[39m
+                [0mSupport[0m
+              [36m</a>[39m
+            [36m</div>[39m
+          [36m</footer>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</body>[39m
+[36m</html>[39m
+ ❯ Proxy.waitForWrapper node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ __tests__/Signup.test.jsx:45:11
+     43|     renderSignup();
+     44| 
+     45|     await waitFor(() => {
+       |           ^
+     46|       expect(screen.getByLabelText(/email/i)).toBeInTheDocument();
+     47|     });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/8]⎯
+
+ FAIL  __tests__/Signup.test.jsx > Signup Page > shows success message after registration
+TestingLibraryElementError: Found a label with the text of: /email/i, however no form control was found associated to that label. Make sure you're using the "for" attribute or "aria-labelledby" attribute correctly.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col min-h-screen relative overflow-x-hidden bg-background"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"fixed inset-0 grid-pattern pointer-events-none"[39m
+        [36m/>[39m
+        [36m<header[39m
+          [33mclass[39m=[32m"z-20 flex justify-between items-center px-6 py-6 w-full bg-transparent"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"font-display text-2xl font-bold uppercase tracking-tighter text-primary border-b-4 border-primary-fixed"[39m
+          [36m>[39m
+            [0mOppex Portal[0m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex gap-4 items-center"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"text-on-surface hover:text-secondary transition-colors"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"material-symbols-outlined text-3xl"[39m
+              [36m>[39m
+                [0mhelp_outline[0m
+              [36m</span>[39m
+            [36m</button>[39m
+          [36m</div>[39m
+        [36m</header>[39m
+        [36m<main[39m
+          [33mclass[39m=[32m"flex-grow z-10 flex items-center justify-center px-6 py-12"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"bauhaus-card w-full max-w-[440px] p-8 md:p-10 relative "[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"absolute -top-6 -right-6 w-12 h-12 bg-secondary border-4 border-primary"[39m
+            [36m/>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"absolute -bottom-6 -left-6 w-12 h-12 bg-tertiary rounded-full border-4 border-primary"[39m
+            [36m/>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"mb-10"[39m
+            [36m>[39m
+              [36m<h1[39m
+                [33mclass[39m=[32m"font-display text-4xl font-bold uppercase tracking-tight text-on-surface mb-2"[39m
+              [36m>[39m
+                [0mCreate Account[0m
+              [36m</h1>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"h-1.5 w-16 bg-primary-fixed mb-4"[39m
+              [36m/>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"font-body text-on-surface-variant"[39m
+              [36m>[39m
+                [0mJoin Oppex Portal today.[0m
+              [36m</p>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"mb-6 flex justify-center"[39m
+            [36m>[39m
+              [36m<button>[39m
+                [0mSign in with Google[0m
+              [36m</button>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex items-center mb-6 before:flex-1 before:border-t-2 before:border-primary/10 after:flex-1 after:border-t-2 after:border-primary/10"[39m
+            [36m>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"text-center font-label text-xs uppercase tracking-widest text-on-surface-variant mx-4"[39m
+              [36m>[39m
+                [0mOr Signup With Email[0m
+              [36m</p>[39m
+            [36m</div>[39m
+            [36m<form[39m
+              [33mclass[39m=[32m"space-y-8"[39m
+              [33mid[39m=[32m"signup-form"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"space-y-2"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"font-label text-xs font-bold text-on-surface uppercase tracking-widest block"[39m
+                  [33mfor[39m=[32m"email"[39m
+                [36m>[39m
+                  [0mUser Email[0m
+                [36m</label>[39m
+                [36m<input[39m
+                  [33mautocomplete[39m=[32m"email"[39m
+                  [33mclass[39m=[32m"w-full bauhaus-input px-4 py-3 text-on-surface placeholder-outline-variant focus:outline-none"[39m
+                  [33mid[39m=[32m"signup-email"[39m
+                  [33mplaceholder[39m=[32m"NAME@COMPANY.COM"[39m
+                  [33mrequired[39m=[32m""[39m
+                  [33mtype[39m=[32m"email"[39m
+                  [33mvalue[39m=[32m""[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"space-y-2"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"font-label text-xs font-bold text-on-surface uppercase tracking-widest block"[39m
+                  [33mfor[39m=[32m"password"[39m
+                [36m>[39m
+                  [0mPassword[0m
+                [36m</label>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"relative"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mautocomplete[39m=[32m"new-password"[39m
+                    [33mclass[39m=[32m"w-full bauhaus-input px-4 py-3 pr-12 text-on-surface placeholder-outline-variant focus:outline-none"[39m
+                    [33mid[39m=[32m"signup-password"[39m
+                    [33mminlength[39m=[32m"8"[39m
+                    [33mplaceholder[39m=[32m"AT LEAST 8 CHARACTERS"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mtype[39m=[32m"password"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary transition-colors"[39m
+                    [33mtabindex[39m=[32m"-1"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"material-symbols-outlined text-[20px]"[39m
+                    [36m>[39m
+                      [0mvisibility[0m
+                    [36m</span>[39m
+                  [36m</button>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"w-full bg-primary-fixed bauhaus-button text-on-primary-container font-bold uppercase tracking-widest py-5 flex justify-center items-center gap-3"[39m
+                [33mid[39m=[32m"signup-submit"[39m
+                [33mtype[39m=[32m"submit"[39m
+              [36m>[39m
+                [36m<span>[39m
+                  [0mCreate Account[0m
+                [36m</span>[39m
+              [36m</button>[39m
+            [36m</form>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"mt-10 pt-8 border-t-2 border-primary/10"[39m
+            [36m>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"font-body text-sm font-medium text-center"[39m
+              [36m>[39m
+                [0mAlready have an account?[0m
+                [36m<a[39m
+                  [33mclass[39m=[32m"text-secondary font-bold uppercase hover:underline ml-1"[39m
+                  [33mdata-discover[39m=[32m"true"[39m
+                  [33mhref[39m=[32m"/login"[39m
+                [36m>[39m
+                  [0mSign In[0m
+                [36m</a>[39m
+              [36m</p>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</main>[39m
+        [36m<footer[39m
+          [33mclass[39m=[32m"z-20 flex flex-col md:flex-row justify-between items-center gap-6 px-10 py-10 w-full bg-primary text-on-primary"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"font-label text-xs font-bold uppercase tracking-widest"[39m
+          [36m>[39m
+            [0m© 2024 Oppex Security Systems / Form Follows Function[0m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex gap-8"[39m
+          [36m>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+              [33mhref[39m=[32m"#"[39m
+            [36m>[39m
+              [0mPrivacy[0m
+            [36m</a>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+              [33mhref[39m=[32m"#"[39m
+            [36m>[39m
+              [0mTerms[0m
+            [36m</a>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+              [33mhref[39m=[32m"#"[39m
+            [36m>[39m
+              [0mSupport[0m
+            [36m</a>[39m
+          [36m</div>[39m
+        [36m</footer>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<html>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col min-h-screen relative overflow-x-hidden bg-background"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"fixed inset-0 grid-pattern pointer-events-none"[39m
+          [36m/>[39m
+          [36m<header[39m
+            [33mclass[39m=[32m"z-20 flex justify-between items-center px-6 py-6 w-full bg-transparent"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"font-display text-2xl font-bold uppercase tracking-tighter text-primary border-b-4 border-primary-fixed"[39m
+            [36m>[39m
+              [0mOppex Portal[0m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex gap-4 items-center"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"text-on-surface hover:text-secondary transition-colors"[39m
+              [36m>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"material-symbols-outlined text-3xl"[39m
+                [36m>[39m
+                  [0mhelp_outline[0m
+                [36m</span>[39m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</header>[39m
+          [36m<main[39m
+            [33mclass[39m=[32m"flex-grow z-10 flex items-center justify-center px-6 py-12"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"bauhaus-card w-full max-w-[440px] p-8 md:p-10 relative "[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"absolute -top-6 -right-6 w-12 h-12 bg-secondary border-4 border-primary"[39m
+              [36m/>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"absolute -bottom-6 -left-6 w-12 h-12 bg-tertiary rounded-full border-4 border-primary"[39m
+              [36m/>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"mb-10"[39m
+              [36m>[39m
+                [36m<h1[39m
+                  [33mclass[39m=[32m"font-display text-4xl font-bold uppercase tracking-tight text-on-surface mb-2"[39m
+                [36m>[39m
+                  [0mCreate Account[0m
+                [36m</h1>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"h-1.5 w-16 bg-primary-fixed mb-4"[39m
+                [36m/>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"font-body text-on-surface-variant"[39m
+                [36m>[39m
+                  [0mJoin Oppex Portal today.[0m
+                [36m</p>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"mb-6 flex justify-center"[39m
+              [36m>[39m
+                [36m<button>[39m
+                  [0mSign in with Google[0m
+                [36m</button>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"flex items-center mb-6 before:flex-1 before:border-t-2 before:border-primary/10 after:flex-1 after:border-t-2 after:border-primary/10"[39m
+              [36m>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"text-center font-label text-xs uppercase tracking-widest text-on-surface-variant mx-4"[39m
+                [36m>[39m
+                  [0mOr Signup With Email[0m
+                [36m</p>[39m
+              [36m</div>[39m
+              [36m<form[39m
+                [33mclass[39m=[32m"space-y-8"[39m
+                [33mid[39m=[32m"signup-form"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"space-y-2"[39m
+                [36m>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"font-label text-xs font-bold text-on-surface uppercase tracking-widest block"[39m
+                    [33mfor[39m=[32m"email"[39m
+                  [36m>[39m
+                    [0mUser Email[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mautocomplete[39m=[32m"email"[39m
+                    [33mclass[39m=[32m"w-full bauhaus-input px-4 py-3 text-on-surface placeholder-outline-variant focus:outline-none"[39m
+                    [33mid[39m=[32m"signup-email"[39m
+                    [33mplaceholder[39m=[32m"NAME@COMPANY.COM"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mtype[39m=[32m"email"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"space-y-2"[39m
+                [36m>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"font-label text-xs font-bold text-on-surface uppercase tracking-widest block"[39m
+                    [33mfor[39m=[32m"password"[39m
+                  [36m>[39m
+                    [0mPassword[0m
+                  [36m</label>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"relative"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mautocomplete[39m=[32m"new-password"[39m
+                      [33mclass[39m=[32m"w-full bauhaus-input px-4 py-3 pr-12 text-on-surface placeholder-outline-variant focus:outline-none"[39m
+                      [33mid[39m=[32m"signup-password"[39m
+                      [33mminlength[39m=[32m"8"[39m
+                      [33mplaceholder[39m=[32m"AT LEAST 8 CHARACTERS"[39m
+                      [33mrequired[39m=[32m""[39m
+                      [33mtype[39m=[32m"password"[39m
+                      [33mvalue[39m=[32m""[39m
+                    [36m/>[39m
+                    [36m<button[39m
+                      [33mclass[39m=[32m"absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary transition-colors"[39m
+                      [33mtabindex[39m=[32m"-1"[39m
+                      [33mtype[39m=[32m"button"[39m
+                    [36m>[39m
+                      [36m<span[39m
+                        [33mclass[39m=[32m"material-symbols-outlined text-[20px]"[39m
+                      [36m>[39m
+                        [0mvisibility[0m
+                      [36m</span>[39m
+                    [36m</button>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"w-full bg-primary-fixed bauhaus-button text-on-primary-container font-bold uppercase tracking-widest py-5 flex justify-center items-center gap-3"[39m
+                  [33mid[39m=[32m"signup-submit"[39m
+                  [33mtype[39m=[32m"submit"[39m
+                [36m>[39m
+                  [36m<span>[39m
+                    [0mCreate Account[0m
+                  [36m</span>[39m
+                [36m</button>[39m
+              [36m</form>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"mt-10 pt-8 border-t-2 border-primary/10"[39m
+              [36m>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"font-body text-sm font-medium text-center"[39m
+                [36m>[39m
+                  [0mAlready have an account?[0m
+                  [36m<a[39m
+                    [33mclass[39m=[32m"text-secondary font-bold uppercase hover:underline ml-1"[39m
+                    [33mdata-discover[39m=[32m"true"[39m
+                    [33mhref[39m=[32m"/login"[39m
+                  [36m>[39m
+                    [0mSign In[0m
+                  [36m</a>[39m
+                [36m</p>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</main>[39m
+          [36m<footer[39m
+            [33mclass[39m=[32m"z-20 flex flex-col md:flex-row justify-between items-center gap-6 px-10 py-10 w-full bg-primary text-on-primary"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"font-label text-xs font-bold uppercase tracking-widest"[39m
+            [36m>[39m
+              [0m© 2024 Oppex Security Systems / Form Follows Function[0m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex gap-8"[39m
+            [36m>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+                [33mhref[39m=[32m"#"[39m
+              [36m>[39m
+                [0mPrivacy[0m
+              [36m</a>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+                [33mhref[39m=[32m"#"[39m
+              [36m>[39m
+                [0mTerms[0m
+              [36m</a>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+                [33mhref[39m=[32m"#"[39m
+              [36m>[39m
+                [0mSupport[0m
+              [36m</a>[39m
+            [36m</div>[39m
+          [36m</footer>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</body>[39m
+[36m</html>[39m
+ ❯ Proxy.waitForWrapper node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ __tests__/Signup.test.jsx:55:11
+     53|     renderSignup();
+     54| 
+     55|     await waitFor(() => {
+       |           ^
+     56|       expect(screen.getByLabelText(/email/i)).toBeInTheDocument();
+     57|     });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/8]⎯
+
+ FAIL  __tests__/Signup.test.jsx > Signup Page > shows error on duplicate email
+TestingLibraryElementError: Found a label with the text of: /email/i, however no form control was found associated to that label. Make sure you're using the "for" attribute or "aria-labelledby" attribute correctly.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col min-h-screen relative overflow-x-hidden bg-background"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"fixed inset-0 grid-pattern pointer-events-none"[39m
+        [36m/>[39m
+        [36m<header[39m
+          [33mclass[39m=[32m"z-20 flex justify-between items-center px-6 py-6 w-full bg-transparent"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"font-display text-2xl font-bold uppercase tracking-tighter text-primary border-b-4 border-primary-fixed"[39m
+          [36m>[39m
+            [0mOppex Portal[0m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex gap-4 items-center"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"text-on-surface hover:text-secondary transition-colors"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"material-symbols-outlined text-3xl"[39m
+              [36m>[39m
+                [0mhelp_outline[0m
+              [36m</span>[39m
+            [36m</button>[39m
+          [36m</div>[39m
+        [36m</header>[39m
+        [36m<main[39m
+          [33mclass[39m=[32m"flex-grow z-10 flex items-center justify-center px-6 py-12"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"bauhaus-card w-full max-w-[440px] p-8 md:p-10 relative "[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"absolute -top-6 -right-6 w-12 h-12 bg-secondary border-4 border-primary"[39m
+            [36m/>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"absolute -bottom-6 -left-6 w-12 h-12 bg-tertiary rounded-full border-4 border-primary"[39m
+            [36m/>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"mb-10"[39m
+            [36m>[39m
+              [36m<h1[39m
+                [33mclass[39m=[32m"font-display text-4xl font-bold uppercase tracking-tight text-on-surface mb-2"[39m
+              [36m>[39m
+                [0mCreate Account[0m
+              [36m</h1>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"h-1.5 w-16 bg-primary-fixed mb-4"[39m
+              [36m/>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"font-body text-on-surface-variant"[39m
+              [36m>[39m
+                [0mJoin Oppex Portal today.[0m
+              [36m</p>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"mb-6 flex justify-center"[39m
+            [36m>[39m
+              [36m<button>[39m
+                [0mSign in with Google[0m
+              [36m</button>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex items-center mb-6 before:flex-1 before:border-t-2 before:border-primary/10 after:flex-1 after:border-t-2 after:border-primary/10"[39m
+            [36m>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"text-center font-label text-xs uppercase tracking-widest text-on-surface-variant mx-4"[39m
+              [36m>[39m
+                [0mOr Signup With Email[0m
+              [36m</p>[39m
+            [36m</div>[39m
+            [36m<form[39m
+              [33mclass[39m=[32m"space-y-8"[39m
+              [33mid[39m=[32m"signup-form"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"space-y-2"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"font-label text-xs font-bold text-on-surface uppercase tracking-widest block"[39m
+                  [33mfor[39m=[32m"email"[39m
+                [36m>[39m
+                  [0mUser Email[0m
+                [36m</label>[39m
+                [36m<input[39m
+                  [33mautocomplete[39m=[32m"email"[39m
+                  [33mclass[39m=[32m"w-full bauhaus-input px-4 py-3 text-on-surface placeholder-outline-variant focus:outline-none"[39m
+                  [33mid[39m=[32m"signup-email"[39m
+                  [33mplaceholder[39m=[32m"NAME@COMPANY.COM"[39m
+                  [33mrequired[39m=[32m""[39m
+                  [33mtype[39m=[32m"email"[39m
+                  [33mvalue[39m=[32m""[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"space-y-2"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"font-label text-xs font-bold text-on-surface uppercase tracking-widest block"[39m
+                  [33mfor[39m=[32m"password"[39m
+                [36m>[39m
+                  [0mPassword[0m
+                [36m</label>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"relative"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mautocomplete[39m=[32m"new-password"[39m
+                    [33mclass[39m=[32m"w-full bauhaus-input px-4 py-3 pr-12 text-on-surface placeholder-outline-variant focus:outline-none"[39m
+                    [33mid[39m=[32m"signup-password"[39m
+                    [33mminlength[39m=[32m"8"[39m
+                    [33mplaceholder[39m=[32m"AT LEAST 8 CHARACTERS"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mtype[39m=[32m"password"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary transition-colors"[39m
+                    [33mtabindex[39m=[32m"-1"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"material-symbols-outlined text-[20px]"[39m
+                    [36m>[39m
+                      [0mvisibility[0m
+                    [36m</span>[39m
+                  [36m</button>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"w-full bg-primary-fixed bauhaus-button text-on-primary-container font-bold uppercase tracking-widest py-5 flex justify-center items-center gap-3"[39m
+                [33mid[39m=[32m"signup-submit"[39m
+                [33mtype[39m=[32m"submit"[39m
+              [36m>[39m
+                [36m<span>[39m
+                  [0mCreate Account[0m
+                [36m</span>[39m
+              [36m</button>[39m
+            [36m</form>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"mt-10 pt-8 border-t-2 border-primary/10"[39m
+            [36m>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"font-body text-sm font-medium text-center"[39m
+              [36m>[39m
+                [0mAlready have an account?[0m
+                [36m<a[39m
+                  [33mclass[39m=[32m"text-secondary font-bold uppercase hover:underline ml-1"[39m
+                  [33mdata-discover[39m=[32m"true"[39m
+                  [33mhref[39m=[32m"/login"[39m
+                [36m>[39m
+                  [0mSign In[0m
+                [36m</a>[39m
+              [36m</p>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</main>[39m
+        [36m<footer[39m
+          [33mclass[39m=[32m"z-20 flex flex-col md:flex-row justify-between items-center gap-6 px-10 py-10 w-full bg-primary text-on-primary"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"font-label text-xs font-bold uppercase tracking-widest"[39m
+          [36m>[39m
+            [0m© 2024 Oppex Security Systems / Form Follows Function[0m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex gap-8"[39m
+          [36m>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+              [33mhref[39m=[32m"#"[39m
+            [36m>[39m
+              [0mPrivacy[0m
+            [36m</a>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+              [33mhref[39m=[32m"#"[39m
+            [36m>[39m
+              [0mTerms[0m
+            [36m</a>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+              [33mhref[39m=[32m"#"[39m
+            [36m>[39m
+              [0mSupport[0m
+            [36m</a>[39m
+          [36m</div>[39m
+        [36m</footer>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<html>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col min-h-screen relative overflow-x-hidden bg-background"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"fixed inset-0 grid-pattern pointer-events-none"[39m
+          [36m/>[39m
+          [36m<header[39m
+            [33mclass[39m=[32m"z-20 flex justify-between items-center px-6 py-6 w-full bg-transparent"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"font-display text-2xl font-bold uppercase tracking-tighter text-primary border-b-4 border-primary-fixed"[39m
+            [36m>[39m
+              [0mOppex Portal[0m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex gap-4 items-center"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"text-on-surface hover:text-secondary transition-colors"[39m
+              [36m>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"material-symbols-outlined text-3xl"[39m
+                [36m>[39m
+                  [0mhelp_outline[0m
+                [36m</span>[39m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</header>[39m
+          [36m<main[39m
+            [33mclass[39m=[32m"flex-grow z-10 flex items-center justify-center px-6 py-12"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"bauhaus-card w-full max-w-[440px] p-8 md:p-10 relative "[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"absolute -top-6 -right-6 w-12 h-12 bg-secondary border-4 border-primary"[39m
+              [36m/>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"absolute -bottom-6 -left-6 w-12 h-12 bg-tertiary rounded-full border-4 border-primary"[39m
+              [36m/>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"mb-10"[39m
+              [36m>[39m
+                [36m<h1[39m
+                  [33mclass[39m=[32m"font-display text-4xl font-bold uppercase tracking-tight text-on-surface mb-2"[39m
+                [36m>[39m
+                  [0mCreate Account[0m
+                [36m</h1>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"h-1.5 w-16 bg-primary-fixed mb-4"[39m
+                [36m/>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"font-body text-on-surface-variant"[39m
+                [36m>[39m
+                  [0mJoin Oppex Portal today.[0m
+                [36m</p>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"mb-6 flex justify-center"[39m
+              [36m>[39m
+                [36m<button>[39m
+                  [0mSign in with Google[0m
+                [36m</button>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"flex items-center mb-6 before:flex-1 before:border-t-2 before:border-primary/10 after:flex-1 after:border-t-2 after:border-primary/10"[39m
+              [36m>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"text-center font-label text-xs uppercase tracking-widest text-on-surface-variant mx-4"[39m
+                [36m>[39m
+                  [0mOr Signup With Email[0m
+                [36m</p>[39m
+              [36m</div>[39m
+              [36m<form[39m
+                [33mclass[39m=[32m"space-y-8"[39m
+                [33mid[39m=[32m"signup-form"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"space-y-2"[39m
+                [36m>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"font-label text-xs font-bold text-on-surface uppercase tracking-widest block"[39m
+                    [33mfor[39m=[32m"email"[39m
+                  [36m>[39m
+                    [0mUser Email[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mautocomplete[39m=[32m"email"[39m
+                    [33mclass[39m=[32m"w-full bauhaus-input px-4 py-3 text-on-surface placeholder-outline-variant focus:outline-none"[39m
+                    [33mid[39m=[32m"signup-email"[39m
+                    [33mplaceholder[39m=[32m"NAME@COMPANY.COM"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mtype[39m=[32m"email"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"space-y-2"[39m
+                [36m>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"font-label text-xs font-bold text-on-surface uppercase tracking-widest block"[39m
+                    [33mfor[39m=[32m"password"[39m
+                  [36m>[39m
+                    [0mPassword[0m
+                  [36m</label>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"relative"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mautocomplete[39m=[32m"new-password"[39m
+                      [33mclass[39m=[32m"w-full bauhaus-input px-4 py-3 pr-12 text-on-surface placeholder-outline-variant focus:outline-none"[39m
+                      [33mid[39m=[32m"signup-password"[39m
+                      [33mminlength[39m=[32m"8"[39m
+                      [33mplaceholder[39m=[32m"AT LEAST 8 CHARACTERS"[39m
+                      [33mrequired[39m=[32m""[39m
+                      [33mtype[39m=[32m"password"[39m
+                      [33mvalue[39m=[32m""[39m
+                    [36m/>[39m
+                    [36m<button[39m
+                      [33mclass[39m=[32m"absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary transition-colors"[39m
+                      [33mtabindex[39m=[32m"-1"[39m
+                      [33mtype[39m=[32m"button"[39m
+                    [36m>[39m
+                      [36m<span[39m
+                        [33mclass[39m=[32m"material-symbols-outlined text-[20px]"[39m
+                      [36m>[39m
+                        [0mvisibility[0m
+                      [36m</span>[39m
+                    [36m</button>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"w-full bg-primary-fixed bauhaus-button text-on-primary-container font-bold uppercase tracking-widest py-5 flex justify-center items-center gap-3"[39m
+                  [33mid[39m=[32m"signup-submit"[39m
+                  [33mtype[39m=[32m"submit"[39m
+                [36m>[39m
+                  [36m<span>[39m
+                    [0mCreate Account[0m
+                  [36m</span>[39m
+                [36m</button>[39m
+              [36m</form>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"mt-10 pt-8 border-t-2 border-primary/10"[39m
+              [36m>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"font-body text-sm font-medium text-center"[39m
+                [36m>[39m
+                  [0mAlready have an account?[0m
+                  [36m<a[39m
+                    [33mclass[39m=[32m"text-secondary font-bold uppercase hover:underline ml-1"[39m
+                    [33mdata-discover[39m=[32m"true"[39m
+                    [33mhref[39m=[32m"/login"[39m
+                  [36m>[39m
+                    [0mSign In[0m
+                  [36m</a>[39m
+                [36m</p>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</main>[39m
+          [36m<footer[39m
+            [33mclass[39m=[32m"z-20 flex flex-col md:flex-row justify-between items-center gap-6 px-10 py-10 w-full bg-primary text-on-primary"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"font-label text-xs font-bold uppercase tracking-widest"[39m
+            [36m>[39m
+              [0m© 2024 Oppex Security Systems / Form Follows Function[0m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex gap-8"[39m
+            [36m>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+                [33mhref[39m=[32m"#"[39m
+              [36m>[39m
+                [0mPrivacy[0m
+              [36m</a>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+                [33mhref[39m=[32m"#"[39m
+              [36m>[39m
+                [0mTerms[0m
+              [36m</a>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors"[39m
+                [33mhref[39m=[32m"#"[39m
+              [36m>[39m
+                [0mSupport[0m
+              [36m</a>[39m
+            [36m</div>[39m
+          [36m</footer>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</body>[39m
+[36m</html>[39m
+ ❯ Proxy.waitForWrapper node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ __tests__/Signup.test.jsx:79:11
+     77|     renderSignup();
+     78| 
+     79|     await waitFor(() => {
+       |           ^
+     80|       expect(screen.getByLabelText(/email/i)).toBeInTheDocument();
+     81|     });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/8]⎯
+
+
+ Test Files  3 failed | 1 passed (4)
+      Tests  8 failed | 4 passed (12)
+   Start at  02:05:49
+   Duration  332.55s (transform 35.15s, setup 61.77s, collect 101.58s, tests 51.18s, environment 451.43s, prepare 55.65s)
+

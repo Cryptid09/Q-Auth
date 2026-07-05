@@ -3,6 +3,7 @@ import { MemoryRouter } from 'react-router-dom';
 import { vi, describe, it, expect, beforeEach } from 'vitest';
 import Signup from '../src/pages/Signup';
 import { AuthProvider } from '../src/context/AuthContext';
+import { GoogleOAuthProvider } from '@react-oauth/google';
 import client from '../src/api/client';
 
 vi.mock('../src/api/client', () => ({
@@ -12,15 +13,23 @@ vi.mock('../src/api/client', () => ({
   },
 }));
 
+// Mock Google OAuth
+vi.mock('@react-oauth/google', () => ({
+  GoogleOAuthProvider: ({ children }) => <div>{children}</div>,
+  GoogleLogin: () => <button>Sign in with Google</button>,
+}));
+
 function renderSignup() {
   client.get.mockRejectedValue({ response: { status: 401 } });
 
   return render(
-    <MemoryRouter>
-      <AuthProvider>
-        <Signup />
-      </AuthProvider>
-    </MemoryRouter>
+    <GoogleOAuthProvider clientId="test-client-id">
+      <MemoryRouter>
+        <AuthProvider>
+          <Signup />
+        </AuthProvider>
+      </MemoryRouter>
+    </GoogleOAuthProvider>
   );
 }
 

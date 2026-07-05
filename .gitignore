@@ -1,5 +1,5 @@
 # Oppex Auth — Git Ignore
-docs/
+doc/
 # --- Java / Maven ---
 user-service/target/
 *.class

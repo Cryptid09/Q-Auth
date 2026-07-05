@@ -11,6 +11,9 @@ jest.mock('../src/services/quarkusClient', () => ({
   login: jest.fn(),
   verifyEmail: jest.fn(),
   getUser: jest.fn(),
+  requestPasswordReset: jest.fn(),
+  resetPassword: jest.fn(),
+  googleLogin: jest.fn(),
 }));
 
 const quarkusClient = require('../src/services/quarkusClient');
@@ -84,6 +87,59 @@ describe('Gateway Auth Routes', () => {
     });
   });
 
+  describe('POST /google', () => {
+    it('should return 200 and set session on valid google token', async () => {
+      const mockUser = { id: 'uuid-123', email: 'google@oppex.dev', verified: true };
+      quarkusClient.googleLogin.mockResolvedValue(mockUser);
+
+      const res = await request(app)
+        .post('/google')
+        .send({ token: 'mocked-jwt-token' });
+
+      expect(res.status).toBe(200);
+      expect(res.body.user).toEqual(mockUser);
+      expect(res.body.message).toBe('Google login successful');
+      expect(res.headers['set-cookie']).toBeDefined();
+      expect(quarkusClient.googleLogin).toHaveBeenCalledWith('mocked-jwt-token');
+    });
+
+    it('should forward 500 on invalid google token', async () => {
+      quarkusClient.googleLogin.mockRejectedValue({
+        response: { status: 500, data: { error: 'Google login failed' } },
+      });
+
+      const res = await request(app)
+        .post('/google')
+        .send({ token: 'invalid-token' });
+
+      expect(res.status).toBe(500);
+    });
+  });
+
+  describe('POST /forgot-password', () => {
+    it('should return 200 on valid email', async () => {
+      quarkusClient.requestPasswordReset.mockResolvedValue({ message: 'Password reset email sent' });
+
+      const res = await request(app)
+        .post('/forgot-password')
+        .send({ email: 'test@oppex.dev' });
+
+      expect(res.status).toBe(200);
+    });
+  });
+
+  describe('POST /reset-password', () => {
+    it('should return 200 on valid reset', async () => {
+      quarkusClient.resetPassword.mockResolvedValue({ message: 'Password successfully reset' });
+
+      const res = await request(app)
+        .post('/reset-password')
+        .send({ token: 'reset-token', newPassword: 'newPassword123' });
+
+      expect(res.status).toBe(200);
+    });
+  });
+
   describe('POST /logout', () => {
     it('should return 200 and clear session', async () => {
       const mockUser = { id: 'uuid-123', email: 'test@oppex.dev', verified: true };
@@ -123,20 +179,17 @@ describe('Gateway Auth Routes', () => {
   });
 
   describe('GET /verify', () => {
-    it('should return 400 when no token provided', async () => {
+    it('should redirect to login on missing token', async () => {
       const res = await request(app).get('/verify');
-
-      expect(res.status).toBe(400);
-      expect(res.body.error).toBe('Token is required');
+      expect(res.status).toBe(302);
+      expect(res.headers.location).toContain('/login?error=missing_token');
     });
 
-    it('should return 200 on valid token', async () => {
+    it('should redirect to login with success on valid token', async () => {
       quarkusClient.verifyEmail.mockResolvedValue({ message: 'Email verified successfully' });
-
       const res = await request(app).get('/verify?token=valid-token');
-
-      expect(res.status).toBe(200);
-      expect(quarkusClient.verifyEmail).toHaveBeenCalledWith('valid-token');
+      expect(res.status).toBe(302);
+      expect(res.headers.location).toContain('/login?verified=true');
     });
   });
 

@@ -146,11 +146,7 @@ cd frontend && npm test
 
 ## Documentation
 
-- [Architecture](docs/architecture.md)
 - [API Documentation](docs/api-docs.md)
 - [Testing Guide](docs/testing-guide.md)
-- [Deployment Guide](docs/deployment-guide.md)
 
-## License
 
-MIT
