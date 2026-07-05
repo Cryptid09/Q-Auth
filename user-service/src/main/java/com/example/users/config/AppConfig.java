@@ -12,5 +12,6 @@ public interface AppConfig {
      * The base URL for email verification links.
      * Example: http://localhost:3001/verify
      */
+    @io.smallrye.config.WithName("base.url")
     String baseUrl();
 }

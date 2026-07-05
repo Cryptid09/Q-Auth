@@ -37,7 +37,7 @@ public class UserService {
     private final VerificationService verificationService;
     private final EmailService emailService;
 
-    @ConfigProperty(name = "app.reset-password.base-url", defaultValue = "http://localhost:5173/reset-password")
+    @ConfigProperty(name = "app.reset.password.base.url", defaultValue = "http://localhost:5173/reset-password")
     String resetPasswordBaseUrl;
 
     @Inject
