@@ -39,6 +39,7 @@ services:
       QUARKUS_MAILER_FROM: ${SMTP_FROM:-noreply@oppex.dev}
       QUARKUS_MAILER_MOCK: "false"
       APP_VERIFICATION_BASE_URL: ${CORS_ORIGIN:-http://localhost}/api/verify
+      APP_RESET_PASSWORD_BASE_URL: ${CORS_ORIGIN:-http://localhost}/reset-password
       QUARKUS_HTTP_CORS_ORIGINS: http://gateway:3001
     networks:
       - backend

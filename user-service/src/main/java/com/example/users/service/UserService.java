@@ -12,6 +12,7 @@ import com.example.users.repository.UserRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
+import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.jboss.logging.Logger;
 
 import java.time.Instant;
@@ -35,6 +36,9 @@ public class UserService {
     private final PasswordService passwordService;
     private final VerificationService verificationService;
     private final EmailService emailService;
+
+    @ConfigProperty(name = "app.reset-password.base-url", defaultValue = "http://localhost:5173/reset-password")
+    String resetPasswordBaseUrl;
 
     @Inject
     public UserService(UserRepository userRepository,
@@ -208,9 +212,7 @@ public class UserService {
             user.resetTokenExpiry = Instant.now().plus(1, ChronoUnit.HOURS);
             userRepository.persist(user);
 
-            // Assuming baseUrl is something like http://localhost:3001/verify
-            // We'll construct the reset URL pointing to the gateway's reset-password route
-            String resetUrl = "http://localhost:3001/reset-password?token=" + token;
+            String resetUrl = resetPasswordBaseUrl + "?token=" + token;
             emailService.sendPasswordResetEmail(user.email, resetUrl);
         });
     }

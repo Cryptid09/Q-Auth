@@ -15,6 +15,9 @@ const authRoutes = require('./routes/auth');
 function createApp() {
   const app = express();
 
+  // Trust the Nginx reverse proxy so secure cookies are sent
+  app.set('trust proxy', 1);
+
   // Middleware
   app.use(cors(config.cors));
   app.use(express.json());
