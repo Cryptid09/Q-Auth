@@ -8,7 +8,7 @@ import { useAuth } from '../context/AuthContext';
 export default function Layout() {
   const { user, logout } = useAuth();
   const location = useLocation();
-  const hideNav = location.pathname === '/login' || location.pathname === '/signup' || location.pathname === '/forgot-password' || location.pathname === '/reset-password';
+  const hideNav = location.pathname === '/login' || location.pathname === '/signup' || location.pathname === '/forgot-password' || location.pathname === '/reset-password' || location.pathname === '/dashboard';
 
   return (
     <div className="app-layout">

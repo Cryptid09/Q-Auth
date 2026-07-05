@@ -12,6 +12,7 @@ export default function Signup() {
   const [localError, setLocalError] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [showHelp, setShowHelp] = useState(false);
   const { signup, loginWithGoogle } = useAuth();
   const navigate = useNavigate();
 
@@ -46,10 +47,30 @@ export default function Signup() {
       
       <header className="z-20 flex justify-between items-center px-6 py-6 w-full bg-transparent">
         <div className="font-display text-2xl font-bold uppercase tracking-tighter text-primary border-b-4 border-primary-fixed">Oppex Portal</div>
-        <div className="flex gap-4 items-center">
-          <button className="text-on-surface hover:text-secondary transition-colors">
+        <div className="flex gap-4 items-center relative">
+          <button 
+            className="text-on-surface hover:text-secondary transition-colors"
+            onClick={() => setShowHelp(!showHelp)}
+            title="Help"
+          >
             <span className="material-symbols-outlined text-3xl">help_outline</span>
           </button>
+          
+          {showHelp && (
+            <div className="absolute top-12 right-0 w-72 bg-primary text-on-primary border-4 border-secondary p-5 shadow-[8px_8px_0_0_rgba(0,0,0,1)] z-50">
+              <div className="absolute -top-3 -right-3 w-6 h-6 bg-tertiary border-2 border-primary rounded-full"></div>
+              <h4 className="font-display font-bold uppercase tracking-tight text-xl mb-2">Registration</h4>
+              <p className="font-body text-sm mb-4">Create a new Oppex account. You will receive an email verification link to activate your access.</p>
+              <div className="flex justify-end">
+                <button 
+                  className="bg-secondary text-primary font-bold px-4 py-1.5 border-2 border-primary hover:bg-white transition-colors"
+                  onClick={() => setShowHelp(false)}
+                >
+                  DISMISS
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </header>
       
@@ -136,7 +157,7 @@ export default function Signup() {
           </form>
           
           <div className="mt-10 pt-8 border-t-2 border-primary/10">
-            <p className="font-body text-sm font-medium text-center">
+            <p className="font-body text-sm font-medium text-center text-gray-700">
               Already have an account? 
               <Link className="text-secondary font-bold uppercase hover:underline ml-1" to="/login">Sign In</Link>
             </p>
@@ -146,7 +167,7 @@ export default function Signup() {
       
       <footer className="z-20 flex flex-col md:flex-row justify-between items-center gap-6 px-10 py-10 w-full bg-primary text-on-primary">
         <div className="font-label text-xs font-bold uppercase tracking-widest">
-            © 2024 Oppex Security Systems / Form Follows Function
+            
         </div>
         <div className="flex gap-8">
           <a className="font-label text-xs font-bold uppercase hover:text-primary-fixed transition-colors" href="#">Privacy</a>
