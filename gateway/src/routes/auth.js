@@ -160,4 +160,18 @@ router.get('/verify', async (req, res) => {
   }
 });
 
+/**
+ * POST /resend-verification — Resend verification email (protected).
+ */
+router.post('/resend-verification', requireAuth, async (req, res) => {
+  try {
+    const result = await quarkusClient.resendVerification(req.session.user.id);
+    res.status(200).json(result);
+  } catch (error) {
+    const status = error.response?.status || 500;
+    const data = error.response?.data || { error: 'Failed to resend verification email' };
+    res.status(status).json(data);
+  }
+});
+
 module.exports = router;

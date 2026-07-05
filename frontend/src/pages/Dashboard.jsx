@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
+import client from '../api/client';
 
 /**
  * Dashboard page — protected, shows verification status.
@@ -8,6 +9,21 @@ import { useAuth } from '../context/AuthContext';
 export default function Dashboard() {
   const { user, logout } = useAuth();
   const [showHelp, setShowHelp] = useState(false);
+  const [resending, setResending] = useState(false);
+  const [resendMsg, setResendMsg] = useState('');
+
+  const handleResend = async () => {
+    setResending(true);
+    setResendMsg('');
+    try {
+      await client.post('/resend-verification');
+      setResendMsg('Verification email resent successfully.');
+    } catch (err) {
+      setResendMsg('Failed to resend email. Please try again later.');
+    } finally {
+      setResending(false);
+    }
+  };
 
   return (
     <div className="flex flex-col min-h-screen relative overflow-x-hidden bg-background">
@@ -79,11 +95,27 @@ export default function Dashboard() {
                 </div>
               </div>
             ) : (
-              <div className="flex gap-4 p-4 border-4 border-primary bg-[#ffebee]" id="unverified-message">
-                <span className="material-symbols-outlined text-[#c62828] text-3xl">gpp_maybe</span>
-                <div>
-                  <h3 className="font-display font-bold uppercase text-[#c62828]">Action Required</h3>
-                  <p className="font-body text-[#b71c1c] font-medium">You need to validate your email to access the portal.</p>
+              <div className="flex flex-col gap-4 p-4 border-4 border-primary bg-[#ffebee]" id="unverified-message">
+                <div className="flex gap-4">
+                  <span className="material-symbols-outlined text-[#c62828] text-3xl">gpp_maybe</span>
+                  <div>
+                    <h3 className="font-display font-bold uppercase text-[#c62828]">Action Required</h3>
+                    <p className="font-body text-[#b71c1c] font-medium">You need to validate your email to access the portal.</p>
+                  </div>
+                </div>
+                <div className="mt-2">
+                  <button 
+                    onClick={handleResend} 
+                    disabled={resending}
+                    className="font-display font-bold uppercase text-xs tracking-wider bg-transparent text-[#c62828] border-2 border-[#c62828] px-3 py-1 hover:bg-[#c62828] hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {resending ? 'Sending...' : 'Resend Verification Email'}
+                  </button>
+                  {resendMsg && (
+                    <p className={`mt-2 font-body text-sm font-bold ${resendMsg.includes('Failed') ? 'text-red-700' : 'text-green-700'}`}>
+                      {resendMsg}
+                    </p>
+                  )}
                 </div>
               </div>
             )}

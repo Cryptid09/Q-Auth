@@ -93,6 +93,19 @@ public class UserResource {
     }
 
     /**
+     * POST /users/{id}/resend-verification — Resend verification email.
+     *
+     * @param id the user UUID
+     * @return 200 OK with a success message
+     */
+    @POST
+    @Path("/{id}/resend-verification")
+    public RestResponse<MessageResponse> resendVerification(@PathParam("id") UUID id) {
+        userService.resendVerification(id);
+        return RestResponse.ok(new MessageResponse("Verification email resent"));
+    }
+
+    /**
      * GET /users/{id} — Get user information by ID.
      *
      * @param id the user UUID

@@ -75,6 +75,15 @@ const quarkusClient = {
     const response = await client.post('/users/google', { token });
     return response.data;
   },
+
+  /**
+   * Resend verification email
+   * @param {string} id
+   */
+  async resendVerification(id) {
+    const response = await client.post(`/users/${id}/resend-verification`);
+    return response.data;
+  },
 };
 
 module.exports = quarkusClient;

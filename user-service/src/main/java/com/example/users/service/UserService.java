@@ -239,4 +239,29 @@ public class UserService {
 
         LOG.infof("Password successfully reset for user: %s", user.id);
     }
+
+    /**
+     * Resends the verification email for an unverified user.
+     * Generates a new token and triggers the email service.
+     *
+     * @param userId the UUID of the user
+     */
+    @Transactional
+    public void resendVerification(UUID userId) {
+        User user = userRepository.findByIdOptional(userId)
+                .orElseThrow(() -> new IllegalArgumentException("User not found"));
+        
+        if (user.verified) {
+            throw new IllegalArgumentException("User is already verified");
+        }
+        
+        // Generate a new token for security purposes
+        String verificationToken = verificationService.generateToken();
+        user.verificationToken = verificationToken;
+        userRepository.persist(user);
+        
+        LOG.infof("Resending verification email to: %s", user.email);
+        String verificationUrl = verificationService.buildVerificationUrl(verificationToken);
+        emailService.sendVerificationEmail(user.email, verificationUrl);
+    }
 }
